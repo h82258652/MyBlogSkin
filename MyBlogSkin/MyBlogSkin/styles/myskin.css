@@ -1,1 +1,17 @@
-﻿
+﻿@import url(global.css);
+
+body {
+    /* 背景图片 */
+    background-image: url(https://www.microsoft.com/taiwan/silverlight/images/wallpaper_summer2013_1920X1080.jpg);
+    background-repeat: no-repeat; /* 禁止重复 */
+    background-attachment: fixed; /* 不随滚动条滚动 */
+    background-size: cover;
+}
+
+/* 顶栏 */
+#topMnu {
+    position: fixed; /* 固定在顶部 */
+    background-color: rgb(49,54,62); /* 设置整条顶栏的背景色 */
+    width: 100%; /* 等于屏幕宽度 */
+    height: 27px;
+}
