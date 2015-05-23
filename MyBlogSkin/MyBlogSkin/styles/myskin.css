@@ -1,4 +1,28 @@
-﻿@import url(global.css);
+﻿@charset "utf-8";
+
+/* 全局 */
+* {
+    /* 去除外边距 */
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    /* 去除内边距 */
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    /* 字体 */
+    font-family: Arial;
+}
+
+a {
+    text-decoration: none; /* 去除下划线 */
+}
+
+li {
+    list-style: none; /* 去除前面的序号 */
+}
 
 body {
     /* 背景图片 */
@@ -9,11 +33,12 @@ body {
 }
 
 #container {
-    background-color: rgba(0,0,0,0.1);/* 弱化背景 */
+    background-color: rgba(0,0,0,0.1); /* 弱化背景（防止瞎狗眼） */
 }
 
+/* 就是那段“代码改变世界” */
 .minyx {
-    position: fixed;
+    position: fixed; /* 固定在顶部 */
     z-index: 3; /* 必须大过 topMnu */
     /* 字体大小 */
     font-size: 12px;
@@ -22,7 +47,7 @@ body {
     height: 27px;
     margin-top: 4px;
     margin-bottom: 4px;
-    padding-left:4px;
+    padding-left: 4px;
     color: white;
 }
 
@@ -32,20 +57,19 @@ body {
 
 /* 顶栏 */
 #topMnu {
-    /* 固定在顶部 */
-    position: fixed;
-    z-index: 2;/* 必须大过内容 */
+    position: fixed; /* 固定在顶部 */
+    z-index: 2; /* 必须大过内容 */
     background-color: rgb(49,54,62); /* 设置整条顶栏的背景色 */
     width: 100%; /* 等于屏幕宽度 */
     height: 27px;
-    text-align: right; /* 靠右对齐 */
     /* 字体大小 */
     font-size: 12px;
     line-height: 18px;
+    text-align: right; /* 靠右对齐 */
 }
 
     #topMnu li {
-        line-height: 27px; /* 居中 */
+        line-height: 27px; /* 垂直居中 */
         display: inline-block; /* 内联，变为方向水平 */
         padding-left: 5px;
         padding-right: 5px;
@@ -74,8 +98,8 @@ body {
 
 /* 头部 */
 #header {
-    height: 90px;
-    padding-top: 37px;
+    height: 40px;
+    padding-top: 42px;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -86,7 +110,7 @@ body {
 }
 
 #header h1 {
-    margin-left: 215px;
+    margin-left: 212px;
     font-weight: normal;
 }
 
@@ -95,9 +119,7 @@ body {
 }
 
 #header small {
-    /*display: block;*/
     font-size: small;
-    text-indent: 26px;
 }
 
 /* 主体 */
@@ -109,51 +131,135 @@ body {
 /* 内容 */
 #content {
     position: absolute;
-    margin-right: 200px;
+    margin-right: 200px; /* 留 200px 给侧边栏 */
     z-index: 1; /* 在侧边栏上一层显示 */
 }
 
 .post {
 }
 
-    .post h2 a {
-        display: block;
-        color: rgb(0,69,107);
-        background-image: url(http://res2.windows.microsoft.com/resbox/en/windows/main/eb4f0171-7cb7-428a-afcc-d93a6b84525c_33.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        padding-left: 36px;
+    .post h2 {
+        background-color: rgba(255,255,255,0.9); /* tab 标题背景 */
+        border-radius: 15px 15px 0px 0px; /* 左上、右上圆角 */
+        padding-top: 10px;
+        padding-bottom: 5px;
+        padding-left: 10px;
     }
+
+        .post h2 a {
+            display: block;
+            color: deepskyblue;
+            /* tab icon */
+            background-image: url(http://res2.windows.microsoft.com/resbox/en/windows/main/eb4f0171-7cb7-428a-afcc-d93a6b84525c_33.png);
+            background-repeat: no-repeat;
+            background-size: 28px 28px;
+            background-position: left center;
+            padding-left: 36px;
+            transition: 0.5s; /* 转到 hover 的过渡时间 */
+        }
+
+            .post h2 a:hover {
+                color: skyblue;
+            }
 
     .post small {
+        color: lightgray;
         display: block;
         text-align: right;
+        margin-top: 4px;
+        margin-right: 10px;
+        margin-bottom: 4px;
     }
 
+        .post small a {
+            color: white;
+        }
+
+            .post small a:hover {
+                color: skyblue;
+            }
+
 .post-list-item {
-    margin-left:5px;
-    margin-right:5px;
-    margin-top:5px;
-    margin-bottom:15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 15px;
+    word-break: break-all;
+}
 
-    /*background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(245,245,220,0.5),rgba(255,255,255,0));*/
+.entry {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: lightgray;
+    text-indent: 30px;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
 
-    background-color:rgba(0,0,0,0.5);
+    .entry a {
+        text-indent: 0px;
+        display: table;
+        color: white;
+    }
 
-    border-radius:15px;
+        .entry a:hover {
+            color: Highlight;
+        }
 
-    padding-left:10px;
-    padding-right:10px;
-    padding-top:10px;
-    padding-bottom:5px;
+/* Tags 与评论数 */
+.postmetadata {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+    .postmetadata li {
+    }
+
+/* 评论数 */
+.icon_comment {
+    float: right;
+    background-image: url(http://download.easyicon.net/png/1186281/512/);
+    background-size: 18px 18px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+    .icon_comment a {
+        color: lightgreen;
+    }
+
+    .icon_comment a:hover{
+        color:greenyellow;
+    }
+
+/* Tags */
+
+.icon_bullet{
+    color:orange;
+}
+
+.icon_bullet strong{
+    color:black;
+}
+
+.icon_bullet a{
+    color:orange;
+}
+.icon_bullet a:hover{
+    color:yellow;
 }
 
 /* 侧边栏 */
 /* 响应式 */
 @media screen and (max-width:900px) {
-    #content{
-        margin-right:0px;
+    #content {
+        margin-right: 0px;
     }
+
     #sidebar {
         visibility: collapse;
     }
