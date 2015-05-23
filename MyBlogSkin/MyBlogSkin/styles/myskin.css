@@ -9,12 +9,12 @@ body {
 }
 
 #container {
-    background-color: rgba(0,0,0,0.05);/* 弱化背景 */
+    background-color: rgba(0,0,0,0.1);/* 弱化背景 */
 }
 
 .minyx {
     position: fixed;
-    z-index: 2; /* 必须大过 topMnu */
+    z-index: 3; /* 必须大过 topMnu */
     /* 字体大小 */
     font-size: 12px;
     line-height: 18px;
@@ -22,6 +22,7 @@ body {
     height: 27px;
     margin-top: 4px;
     margin-bottom: 4px;
+    padding-left:4px;
     color: white;
 }
 
@@ -33,7 +34,7 @@ body {
 #topMnu {
     /* 固定在顶部 */
     position: fixed;
-    z-index: 1;
+    z-index: 2;/* 必须大过内容 */
     background-color: rgb(49,54,62); /* 设置整条顶栏的背景色 */
     width: 100%; /* 等于屏幕宽度 */
     height: 27px;
@@ -110,7 +111,6 @@ body {
     position: absolute;
     margin-right: 200px;
     z-index: 1; /* 在侧边栏上一层显示 */
-    background-color: rgba(0,0,0,0.1);
 }
 
 .post {
@@ -131,16 +131,29 @@ body {
     }
 
 .post-list-item {
-    margin-left:10px;
-    margin-right:10px;
+    margin-left:5px;
+    margin-right:5px;
     margin-top:5px;
-    margin-bottom:25px;
+    margin-bottom:15px;
 
-    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(245,245,220,0.5),rgba(255,255,255,0));
+    /*background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(245,245,220,0.5),rgba(255,255,255,0));*/
+
+    background-color:rgba(0,0,0,0.5);
+
+    border-radius:15px;
+
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:10px;
+    padding-bottom:5px;
 }
 
 /* 侧边栏 */
-@media screen and (max-width:600px) {
+/* 响应式 */
+@media screen and (max-width:900px) {
+    #content{
+        margin-right:0px;
+    }
     #sidebar {
         visibility: collapse;
     }
