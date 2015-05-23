@@ -8,10 +8,151 @@ body {
     background-size: cover;
 }
 
+#container {
+    background-color: rgba(0,0,0,0.05);/* 弱化背景 */
+}
+
+.minyx {
+    position: fixed;
+    z-index: 2; /* 必须大过 topMnu */
+    /* 字体大小 */
+    font-size: 12px;
+    line-height: 18px;
+    /* 垂直居中 */
+    height: 27px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: white;
+}
+
+    .minyx:hover {
+        color: skyblue;
+    }
+
 /* 顶栏 */
 #topMnu {
-    position: fixed; /* 固定在顶部 */
+    /* 固定在顶部 */
+    position: fixed;
+    z-index: 1;
     background-color: rgb(49,54,62); /* 设置整条顶栏的背景色 */
     width: 100%; /* 等于屏幕宽度 */
     height: 27px;
+    text-align: right; /* 靠右对齐 */
+    /* 字体大小 */
+    font-size: 12px;
+    line-height: 18px;
+}
+
+    #topMnu li {
+        line-height: 27px; /* 居中 */
+        display: inline-block; /* 内联，变为方向水平 */
+        padding-left: 5px;
+        padding-right: 5px;
+        /* 右边框 */
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: gray;
+        color: white;
+    }
+
+        #topMnu li:last-child {
+            /* 去除最后一个元素的右边框 */
+            border-right-width: 0px;
+            border-right-style: none;
+            border-right-color: none;
+        }
+
+        #topMnu li a {
+            color: white;
+            font-weight: bold;
+        }
+
+            #topMnu li a:hover {
+                color: skyblue;
+            }
+
+/* 头部 */
+#header {
+    height: 90px;
+    padding-top: 37px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#menu {
+    float: right;
+    visibility: collapse;
+}
+
+#header h1 {
+    margin-left: 215px;
+    font-weight: normal;
+}
+
+#header a {
+    color: gray;
+}
+
+#header small {
+    /*display: block;*/
+    font-size: small;
+    text-indent: 26px;
+}
+
+/* 主体 */
+#wrapper {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* 内容 */
+#content {
+    position: absolute;
+    margin-right: 200px;
+    z-index: 1; /* 在侧边栏上一层显示 */
+    background-color: rgba(0,0,0,0.1);
+}
+
+.post {
+}
+
+    .post h2 a {
+        display: block;
+        color: rgb(0,69,107);
+        background-image: url(http://res2.windows.microsoft.com/resbox/en/windows/main/eb4f0171-7cb7-428a-afcc-d93a6b84525c_33.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-left: 36px;
+    }
+
+    .post small {
+        display: block;
+        text-align: right;
+    }
+
+.post-list-item {
+    margin-left:10px;
+    margin-right:10px;
+    margin-top:5px;
+    margin-bottom:25px;
+
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(245,245,220,0.5),rgba(255,255,255,0));
+}
+
+/* 侧边栏 */
+@media screen and (max-width:600px) {
+    #sidebar {
+        visibility: collapse;
+    }
+}
+
+#sidebar {
+    position: absolute;
+    right: 20px;
+    width: 160px;
+}
+
+/* 低栏 */
+#footer {
+    visibility: collapse;
 }
