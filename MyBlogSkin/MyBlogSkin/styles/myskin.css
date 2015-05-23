@@ -24,9 +24,15 @@ li {
     list-style: none; /* 去除前面的序号 */
 }
 
+/* 按比例自动缩放图片 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     /* 背景图片 */
-    background-image: url(https://www.microsoft.com/taiwan/silverlight/images/wallpaper_summer2013_1920X1080.jpg);
+    background-image: url(http://images.cnblogs.com/cnblogs_com/h82258652/693238/o_wallpaper_summer2013_1920X1080.jpg);
     background-repeat: no-repeat; /* 禁止重复 */
     background-attachment: fixed; /* 不随滚动条滚动 */
     background-size: cover;
@@ -34,6 +40,8 @@ body {
 
 #container {
     background-color: rgba(0,0,0,0.1); /* 弱化背景（防止瞎狗眼） */
+    min-height: 100%;
+    padding-bottom: 5px;
 }
 
 /* 就是那段“代码改变世界” */
@@ -112,11 +120,23 @@ body {
 #header h1 {
     margin-left: 212px;
     font-weight: normal;
+    display: inline;
+}
+
+/* 响应式 */
+@media screen and (max-width:1000px) {
+    #header h1 {
+        margin-left: 15px;
+    }
 }
 
 #header a {
     color: gray;
 }
+
+    #header a:hover {
+        color: orange;
+    }
 
 #header small {
     font-size: small;
@@ -130,15 +150,18 @@ body {
 
 /* 内容 */
 #content {
-    position: absolute;
-    margin-right: 200px; /* 留 200px 给侧边栏 */
+    /*position: absolute;*/
+    margin-right: 185px; /* 留 185px 给侧边栏 */
     z-index: 1; /* 在侧边栏上一层显示 */
 }
 
 .post {
+    /* 圆角背景 */
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 15px;
 }
 
-    .post h2 {
+    .post > h2 {
         background-color: rgba(255,255,255,0.9); /* tab 标题背景 */
         border-radius: 15px 15px 0px 0px; /* 左上、右上圆角 */
         padding-top: 10px;
@@ -146,11 +169,11 @@ body {
         padding-left: 10px;
     }
 
-        .post h2 a {
+        .post > h2 a {
             display: block;
             color: deepskyblue;
             /* tab icon */
-            background-image: url(http://res2.windows.microsoft.com/resbox/en/windows/main/eb4f0171-7cb7-428a-afcc-d93a6b84525c_33.png);
+            background-image: url(http://images.cnblogs.com/cnblogs_com/h82258652/693238/o_tab_icon.png);
             background-repeat: no-repeat;
             background-size: 28px 28px;
             background-position: left center;
@@ -158,11 +181,11 @@ body {
             transition: 0.5s; /* 转到 hover 的过渡时间 */
         }
 
-            .post h2 a:hover {
+            .post > h2 a:hover {
                 color: skyblue;
             }
 
-    .post small {
+    .post > small {
         color: lightgray;
         display: block;
         text-align: right;
@@ -171,11 +194,11 @@ body {
         margin-bottom: 4px;
     }
 
-        .post small a {
+        .post > small a {
             color: white;
         }
 
-            .post small a:hover {
+            .post > small a:hover {
                 color: skyblue;
             }
 
@@ -184,29 +207,97 @@ body {
     margin-right: 5px;
     margin-top: 5px;
     margin-bottom: 15px;
-    background-color: rgba(0,0,0,0.5);
-    border-radius: 15px;
     word-break: break-all;
 }
 
 .entry {
-    padding-left: 10px;
-    padding-right: 10px;
-    color: lightgray;
+}
+
+/* 列表页 */
+.c_b_p_desc {
     text-indent: 30px;
     font-weight: 500;
     padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: lightgray;
 }
 
-    .entry a {
+    /* 阅读全文 */
+    .c_b_p_desc a {
         text-indent: 0px;
         display: table;
         color: white;
+        background-image: url(http://images.cnblogs.com/cnblogs_com/h82258652/693238/o_icon_readmore.png);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: contain;
+        padding-left: 30px;
     }
 
-        .entry a:hover {
+        .c_b_p_desc a:hover {
             color: Highlight;
         }
+
+/* 博文页 */
+#post .entry {
+    background-color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+#cnblogs_post_body {
+}
+
+    #cnblogs_post_body p {
+        margin: 10px auto;
+        line-height: 1.8;
+    }
+
+    #cnblogs_post_body a {
+        border-bottom-width: 1px;
+        border-bottom-style: dashed;
+    }
+
+#blog_post_info_block {
+    /* 将上边框用作分隔线 */
+    border-top-width: 4px;
+    border-top-color: black;
+    border-top-style: double;
+    margin-left: -10px;
+    padding-left: 10px;
+    margin-right: -10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+/* 绿色通道 */
+#green_channel {
+    float: right;
+    background-color: white;
+    border: 1px solid black;
+}
+
+/* 作者信息 */
+
+/* 推荐与反对 */
+#div_digg {
+    position: fixed;
+    bottom: 5px;
+    width: 120px;
+    right: 200px;
+    border: 2px solid skyblue;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #5F5A4B, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+}
+
+/* 上一篇、下一篇 */
+#post_next_prev {
+}
 
 /* Tags 与评论数 */
 .postmetadata {
@@ -221,7 +312,7 @@ body {
 /* 评论数 */
 .icon_comment {
     float: right;
-    background-image: url(http://download.easyicon.net/png/1186281/512/);
+    background-image: url(http://images.cnblogs.com/cnblogs_com/h82258652/693238/o_icon_comment.png);
     background-size: 18px 18px;
     background-position: left center;
     background-repeat: no-repeat;
@@ -232,28 +323,327 @@ body {
         color: lightgreen;
     }
 
-    .icon_comment a:hover{
-        color:greenyellow;
-    }
+        .icon_comment a:hover {
+            color: greenyellow;
+        }
 
 /* Tags */
-
-.icon_bullet{
-    color:orange;
+.icon_bullet {
+    color: orange;
 }
 
-.icon_bullet strong{
-    color:black;
+    .icon_bullet strong {
+        color: silver;
+    }
+
+    .icon_bullet a {
+        color: orange;
+    }
+
+        .icon_bullet a:hover {
+            color: yellow;
+        }
+
+/* 已有评论 */
+#blog-comments-placeholder {
+    margin-top: 10px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 1.65;
 }
 
-.icon_bullet a{
-    color:orange;
+/* 跳转到评论框 */
+.addcomment {
+    visibility: collapse;
+    position: fixed;
+    width: 0px;
+    height: 0px;
 }
-.icon_bullet a:hover{
-    color:yellow;
+
+#commentList li {
+    background-color: white;
+    /* 用下边框做评论之间的分隔线 */
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    /* 内边距 */
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
 }
+
+    /* 去除最后一个的下边框 */
+    #commentList li:last-child {
+        border-bottom-width: 0px;
+        border-bottom-style: none;
+        border-bottom-color: none;
+    }
+
+    #commentList li cite {
+        font-style: normal; /* 去除斜体 */
+    }
+
+/* 当前评论几楼 */
+.layer {
+    color: #009933;
+}
+
+    .layer:hover {
+        color: #ff3300;
+    }
+
+/* 指示当前楼是楼主 */
+.louzhu {
+}
+
+/* 发送评论的人 */
+#commentList li a[id^="a_comment_author_"] {
+    color: #009933;
+    font-weight: bold;
+}
+
+/* 发送私信小按钮 */
+.sendMsg2This {
+}
+
+/* 评论发送时间 */
+.comment_date {
+    display: block;
+    color: rgb(17,129,162);
+}
+
+/* 评论内容 */
+.blog_comment_body {
+    margin: 5px;
+}
+
+/* 支持评论或反对评论 */
+.comment_vote {
+    float: right;
+}
+
+/* 支持 */
+.comment_digg {
+    color: #6699cc;
+    /* icon */
+    background-image: url(http://images.cnblogs.com/cnblogs_com/h82258652/693238/o_icon_digg.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 25px !important; /* 禁止覆盖 */
+    margin-right: 10px;
+}
+
+    .comment_digg:hover {
+        color: #4477ff;
+    }
+
+/* 反对 */
+.comment_bury {
+    color: gray;
+    /* icon */
+    background-image: url(http://images.cnblogs.com/cnblogs_com/h82258652/693238/o_icon_bury.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 25px !important; /* 禁止覆盖 */
+}
+
+    .comment_bury:hover {
+        color: darkgray;
+    }
+
+/* 回复、引用、删除评论 */
+.opt_comment {
+}
+
+    .opt_comment a {
+        color: #6699cc;
+        font-size: 14px;
+    }
+
+        .opt_comment a:hover {
+            font-size: 16px;
+        }
+
+/* 发送新评论 */
+#comment_form {
+}
+
+/* 刷新评论、刷新页面、返回顶部 */
+#comment_nav {
+    margin-top: -11px;
+}
+
+/* 刷新评论按钮 */
+#lnk_RefreshComments {
+    background-color: white;
+    border-radius: 0px 0px 2px 2px;
+    box-shadow: 0px 4px 5px 1px rgba(7,93,179,0.5);
+    color: rgb(7,93,179);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    margin-left: 2px;
+}
+
+/* 刷新页面按钮 */
+#comment_nav a:nth-last-child(2) {
+    background-color: white;
+    border-radius: 0px 0px 2px 2px;
+    box-shadow: 0px 4px 5px 1px rgba(7,93,179,0.5);
+    color: rgb(7,93,179);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    margin-left: 2px;
+}
+
+/* 返回顶部 */
+#comment_nav a:last-child {
+    background-color: white;
+    border-radius: 0px 0px 2px 2px;
+    box-shadow: 0px 4px 5px 1px rgba(7,93,179,0.5);
+    color: rgb(7,93,179);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    margin-left: 2px;
+}
+
+/* 包含除上面三个按钮的发表评论部分 */
+#comment_form_container {
+}
+
+/* 评论框工具栏 */
+.commentbox_title {
+    width: 100%;
+    cursor: default;
+}
+
+/* 评论框工具栏各个按钮 */
+.commentbox_title_right img {
+    cursor: pointer;
+}
+
+/* 评论内容文本框 */
+#tbCommentBody {
+    width: 100%;
+    resize: none;
+}
+
+/* 提交评论和注销 */
+#commentbox_opt {
+    display: inline;
+}
+
+/* 提交评论 */
+#btn_comment_submit {
+}
+
+    #btn_comment_submit:hover {
+    }
+
+    #btn_comment_submit:active {
+    }
+
+/* 注销 */
+#commentbox_opt a:last-child {
+    visibility: collapse;
+    position: absolute;
+}
+
+/* [使用Ctrl+Enter键快速提交] */
+#commentbox_opt + p {
+    display: inline;
+    text-shadow: 0px 0px 15px gold;
+}
+
+/* 底部导航栏 */
+#site_nav_under {
+    visibility: collapse;
+    position: fixed;
+}
+
+/* 广告1 */
+#ad_under_post_holder {
+    visibility: collapse;
+    position: fixed;
+}
+
+/* 最新 IT 新闻 */
+#under_post_news {
+    position: fixed;
+    width: 0px;
+    height: 0px;
+    visibility: collapse;
+}
+
+/* 广告2 */
+#google_ad_c2 {
+    visibility: collapse;
+    position: fixed;
+}
+
+/* 最新知识库文章 */
+#under_post_kb {
+    position: fixed;
+    width: 0px;
+    height: 0px;
+    visibility: collapse;
+}
+
+/* Pager */
+#pager {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+    #pager a {
+        color: deepskyblue;
+        background-color: white;
+        border: 1px solid #9aafe5;
+        padding-top: 4px;
+        padding-right: 10px;
+        padding-bottom: 4px;
+        padding-left: 10px;
+        transition: 0.5s;
+    }
+
+        #pager a:first-child {
+            border-radius: 14px 0px 0px 14px;
+        }
+
+        #pager a:last-child {
+            border-radius: 0px 14px 14px 0px;
+        }
+
+        #pager a:only-child {
+            border-radius: 14px 14px 14px 14px;
+        }
+
+        #pager a:hover {
+            color: gold;
+        }
+
+    #pager span {
+        padding-left: 5px;
+        padding-right: 5px;
+        color: black;
+        font-weight: 500;
+        text-shadow: 0px 0px 5px deepskyblue;
+    }
 
 /* 侧边栏 */
+#sidebar {
+    float: right;
+    top: 82px;
+    position: absolute;
+    right: 20px;
+    width: 160px;
+}
+
 /* 响应式 */
 @media screen and (max-width:900px) {
     #content {
@@ -263,15 +653,185 @@ body {
     #sidebar {
         visibility: collapse;
     }
+
+    #div_digg {
+        right: 0px;
+    }
 }
 
-#sidebar {
-    position: absolute;
-    right: 20px;
-    width: 160px;
+/* 关于 */
+#about {
 }
 
-/* 低栏 */
+/* 关于标题 */
+#about_title {
+    visibility: collapse;
+    position: fixed;
+}
+
+/* 后台填写的 HTML */
+#blog-news {
+}
+
+/* 博主信息 */
+#profile_block {
+    font-size: small;
+    color: lightgray;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 0px 0px 5px 5px;
+    margin-top: -4px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+    #profile_block a {
+        color: lightskyblue;
+    }
+
+        #profile_block a:hover {
+            color: white;
+        }
+
+/* 搜索 */
+#mySearchWrapper {
+    visibility: collapse;
+    position: fixed;
+}
+
+/* 最新评论 */
+#side-recent-comments {
+    visibility: collapse;
+    position: fixed;
+}
+
+/* 随笔档案 */
+#side-archives {
+    visibility: collapse;
+    position: fixed;
+}
+
+/* 日历 */
+#side-calendar {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+    /* 日历标题 */
+    #side-calendar h2 {
+        background-color: rgba(255,255,255,0.9);
+        text-align: center;
+        border-radius: 5px 5px 0px 0px;
+    }
+
+/* 日历本体 */
+#blog-calendar {
+}
+
+/* 上一月和下一月 */
+.CalNextPrev {
+    background-color: rgba(225,225,225,0.85);
+    border-radius: 0px !important;
+    width: 19px;
+    height: 19px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+    .CalNextPrev a {
+        color: black;
+    }
+
+/* 当前月 */
+.CalTitle td[align="center"] {
+    color: silver;
+}
+
+/* 星期日 */
+#blogCalendar tr:not(:nth-child(1)) th:nth-child(1), #blogCalendar tr:not(:nth-child(1)) td:nth-child(1) {
+    background-color: rgba(255,0,0,0.85);
+}
+
+#blogCalendar tr:last-child td:nth-child(1) {
+    border-radius: 0px 0px 0px 5px;
+}
+
+/* 星期一 */
+#blogCalendar tr:not(:nth-child(1)) th:nth-child(2), #blogCalendar tr:not(:nth-child(1)) td:nth-child(2) {
+    background-color: rgba(255,165,0,0.85);
+}
+
+/* 星期二 */
+#blogCalendar tr:not(:nth-child(1)) th:nth-child(3), #blogCalendar tr:not(:nth-child(1)) td:nth-child(3) {
+    background-color: rgba(255,255,0,0.85);
+}
+/* 星期三 */
+#blogCalendar tr:not(:nth-child(1)) th:nth-child(4), #blogCalendar tr:not(:nth-child(1)) td:nth-child(4) {
+    background-color: rgba(0,128,0,0.85);
+}
+
+/* 星期四 */
+#blogCalendar tr:not(:nth-child(1)) th:nth-child(5), #blogCalendar tr:not(:nth-child(1)) td:nth-child(5) {
+    background-color: rgba(0,0,255,0.85);
+}
+
+/* 星期五 */
+#blogCalendar tr:not(:nth-child(1)) th:nth-child(6), #blogCalendar tr:not(:nth-child(1)) td:nth-child(6) {
+    background-color: rgba(6,82,121,0.85);
+}
+
+/* 星期六 */
+#blogCalendar tr:not(:nth-child(1)) th:nth-child(7), #blogCalendar tr:not(:nth-child(1)) td:nth-child(7) {
+    background-color: rgba(128,0,128,0.85);
+}
+
+#blogCalendar tr:last-child td:nth-child(7) {
+    border-radius: 0px 0px 5px 0px;
+}
+
+#blogCalendar tr:not(:nth-child(1)) th {
+    color: silver;
+    text-shadow: 0px 0px 5px gold;
+}
+
+#blogCalendar tr:not(:nth-child(1)) td {
+    color: gray;
+}
+
+#blogCalendar tr:not(:nth-child(1)) a {
+    color: lightskyblue;
+}
+
+    #blogCalendar tr:not(:nth-child(1)) a:hover {
+        color: white;
+    }
+
+    #blogCalendar tr:not(:nth-child(1)) a u {
+        text-decoration: none;
+    }
+
+/* 随笔分类 */
+#side-categories {
+    visibility: collapse;
+    position: fixed;
+}
+
+/* 推荐排行榜 */
+#side-top-posts-custom {
+    visibility: collapse;
+    position: fixed;
+}
+
+/* 阅读排行榜 */
+#side-top-posts {
+    visibility: collapse;
+    position: fixed;
+}
+
+/* 低部栏 */
 #footer {
     visibility: collapse;
+    position: fixed;
 }

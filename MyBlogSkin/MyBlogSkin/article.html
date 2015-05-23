@@ -1,0 +1,900 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <title>【Win10】开发中的新特性及原有的变更 - h82258652 - 博客园</title>
+    <link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=VDh8zSH1vx51MDqRT7hK220akQ58FjlaaeGuWBPhfOA1" />
+    <link type="text/css" rel="stylesheet" href="styles/myskin.css" />
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/h82258652/rss" />
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/h82258652/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/h82258652/wlwmanifest.xml" />
+    <script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">var currentBlogApp = 'h82258652', cb_enable_mathjax=false;</script>
+    <script src="/bundles/blog-common.js?v=Lo_yNgOy3xSX4jFztznlaU-fp0VmAT5VQ5SPZYVI7BE1" type="text/javascript"></script>
+    <script src="/skins/Minyx2_Lite/bundle-Minyx2_Lite.js?v=dAK2Rw4GyogXqBvhMZEW0IkYD2kjtuL3y_BKRj-vp4g1" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+    <a name="top"></a>
+
+
+    <div id="container">
+        <a class="minyx" href="http://www.cnblogs.com/">代码改变世界</a>
+        <ul id="topMnu">
+            <!-- 统计数据 -->
+            <li>
+
+
+                Posts - 72,
+                Articles - 0,
+                Comments - 65
+                <!---->
+
+            </li>
+            <!-- 这边可以增加一些链接 -->
+            <!-- 博客园 -->
+            <li><a href="http://www.cnblogs.com">Cnblogs</a></li>
+            <!-- 管理 -->
+            <li id="topMnu-dashboard">
+                <a id="lnkDashboard" href="http://www.cnblogs.com/h82258652/admin/EditPosts.aspx">Dashboard</a>
+            </li>
+            <li>
+                <a id="lnkLogin" href="http://passport.cnblogs.com/logout.aspx?ReturnUrl=http://www.cnblogs.com/h82258652/p/4508777.html">Logout</a>
+            </li>
+        </ul>
+
+        <script type="text/javascript">
+        var m = window.__blog.topMenuRendered;
+        if (m) { m(__$("topMnu")); }
+        </script>
+
+        <div id="header">
+            <ul id="menu">
+                <!-- 首页，当前section加上current类 -->
+                <li id="menu-home" class="current">
+                    <a id="lnkHome" href="http://www.cnblogs.com/h82258652/">Home</a>
+                </li>
+                <!-- 联系 -->
+                <li id="menu-contact">
+                    <a id="lnkContact" href="http://space.cnblogs.com/msg/send/h82258652">Contact</a>
+                </li>
+                <!-- 相册 -->
+                <li id="menu-gallary">
+                    <a id="lnkGallery" href="http://www.cnblogs.com/h82258652/gallery.html">Gallery</a>
+                </li>
+                <!-- Rss订阅 -->
+                <li id="rss">
+                    <a id="lnkRss" href="http://www.cnblogs.com/h82258652/rss">RSS</a>
+                </li>
+            </ul>
+            <div id="newmsg"></div>
+            <h1>
+                <!-- 主标题 -->
+                <a id="lnkBlogTitle" href="http://www.cnblogs.com/h82258652/">h82258652</a>
+                <!-- 子标题 -->
+                <small>
+                    微软脑残粉
+                </small>
+            </h1>
+        </div>
+
+        <script type="text/javascript">
+        var m = window.__blog.headerRendered;
+        if (m) { m(__$("header")); }
+        </script>
+
+        <div id="wrapper">
+            <div id="content">
+                <script type="text/javascript">
+                var m = window.__blog.preRenderPosts;
+                if (m) { m(); }
+                </script>
+
+
+                <div class="post" id="post">
+                    <a name="top"></a>
+                    <h2><a id="cb_post_title_url" href="http://www.cnblogs.com/h82258652/p/4508777.html">【Win10】开发中的新特性及原有的变更</a></h2>
+                    <small>2015-05-16 22:10 by h82258652, <span id="post_view_count">...</span> 阅读, <span id="post_comment_count">...</span> 评论, <a href="#" onclick="AddToWz(4508777);return false;">收藏</a>,  <a href="http://i.cnblogs.com/EditPosts.aspx?postid=4508777" rel="nofollow">编辑</a></small>
+                    <div class="entry">
+                        <div id="cnblogs_post_body">
+                            <p>声明：本文内容适用于 Visual Studio 2015 RC 及 Windows 10 10069 SDK 环境下，若以后有任何变更，请以新的特性为准。</p>
+                            <h1>一、Password 控件的小眼睛属性的变更</h1>
+                            <p>在 Windows 8.1（含 Windows 8） 及 Windows Phone 8.1 Runtime 中，<a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.passwordbox.aspx" target="_blank">Password</a> 控件的小眼睛是由 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.passwordbox.ispasswordrevealbuttonenabled.aspx" target="_blank">IsPasswordRevealButtonEnabled</a> 属性定义的，但是，尽管是相同的属性名字，却有着不同的表现形式。</p>
+                            <p>Windows 8.1：<a href="http://images0.cnblogs.com/blog/484187/201505/162209307823522.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="图片1" src="http://images0.cnblogs.com/blog/484187/201505/162209315178380.png" alt="图片1" width="416" height="87" border="0" /></a></p>
+                            <p>Windows Phone 8.1 Runtime：<a href="http://images0.cnblogs.com/blog/484187/201505/162209319394209.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="图片2" src="http://images0.cnblogs.com/blog/484187/201505/162209323927280.png" alt="图片2" width="353" height="121" border="0" /></a></p>
+                            <p>这就给开发人员带来困惑了，因为所占的空间大小不一样，导致整个页面的布局难以控制。（所谓的牵一发而动全身就是这种情况吧）</p>
+                            <p>在 Windows 10 中，控制这个小眼睛变更为 Password 控件的 <a href="https://msdn.microsoft.com/zh-cn/library/dn890867(v=win.10).aspx" target="_blank">PasswordRevealMode</a> 属性。这个属性是 <a href="https://msdn.microsoft.com/zh-cn/library/windows.ui.xaml.controls.passwordrevealmode.aspx" target="_blank">PasswordRevealMode</a> 枚举类型，分别有三个值：Peek、Hidden 和 Visible，对 Password 控件来说，Peek 是默认值。也就是说默认是这样的：</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209328763894.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="QQ截图20150516163159" src="http://images0.cnblogs.com/blog/484187/201505/162209333141196.png" alt="QQ截图20150516163159" width="311" height="44" border="0" /></a></p>
+                            <p>若设置为 Hidden，则不显示小眼睛；设置为 Visible，则 Password 控件直接显示密码原文，这时候样子就跟 TextBox 一个样。</p>
+                            <p>PS：<a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.passwordbox.ispasswordrevealbuttonenabled.aspx" target="_blank">IsPasswordRevealButtonEnabled</a> 属性在 Windows 10 的 Password 控件仍存在，但已被标注为过时。</p>
+                            <h1>二、新的 ContentDialog 样式</h1>
+                            <p>用法没有变，但外观我个人认为是变得更好看了，而且带有动画效果。</p>
+                            <p>Desktop 下：</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209339238782.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="QQ截图20150516164513" src="http://images0.cnblogs.com/blog/484187/201505/162209347043953.png" alt="QQ截图20150516164513" width="770" height="690" border="0" /></a></p>
+                            <p>Mobile 下：</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209352985769.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="QQ截图20150516164711" src="http://images0.cnblogs.com/blog/484187/201505/162209358296396.png" alt="QQ截图20150516164711" width="408" height="726" border="0" /></a></p>
+                            <h1>三、AutoSuggestBox</h1>
+                            <p>这个控件在 Windows Phone 8.1 Runtime 就已经存在了，但是在 Windows 8.1 中是没有的（取而代之的是 Windows 8.1 有 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.searchbox.aspx" target="_blank">SearchBox</a> 控件）。在大一统的思想下，<a href="https://msdn.microsoft.com/zh-cn/library/windows.ui.xaml.controls.autosuggestbox.aspx" target="_blank">AutoSuggestBox</a> 控件将取代 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.searchbox.aspx" target="_blank">SearchBox</a>。</p>
+                            <p>Desktop：<a href="http://images0.cnblogs.com/blog/484187/201505/162209364238212.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="图片3" src="http://images0.cnblogs.com/blog/484187/201505/162209369393070.png" alt="图片3" width="499" height="419" border="0" /></a></p>
+                            <p>Mobile：<a href="http://images0.cnblogs.com/blog/484187/201505/162209376268212.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="图片4" src="http://images0.cnblogs.com/blog/484187/201505/162209384239556.png" alt="图片4" width="302" height="556" border="0" /></a></p>
+                            <h1>四、SplitView</h1>
+                            <p>这个控件暂时还没有官方的中文名称，因此有人喜欢叫汉堡、也有人喜欢叫侧滑菜单（主要视乎你怎么用这个控件）。这里我暂时还是用 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.splitview.aspx" target="_blank">SplitView</a> 来称呼它。</p>
+                            <h2>1、示例</h2>
+                            <p>先来个示例代码：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Page </span><span style="color: #ff0000;">x:Class</span><span style="color: #0000ff;">="Build2015XamlDemo.SplitViewPage"</span><span style="color: #ff0000;">
+      xmlns</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span><span style="color: #ff0000;">
+      xmlns:x</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml"</span><span style="color: #ff0000;">
+      xmlns:local</span><span style="color: #0000ff;">="using:Build2015XamlDemo"</span><span style="color: #ff0000;">
+      xmlns:d</span><span style="color: #0000ff;">="http://schemas.microsoft.com/expression/blend/2008"</span><span style="color: #ff0000;">
+      xmlns:mc</span><span style="color: #0000ff;">="http://schemas.openxmlformats.org/markup-compatibility/2006"</span><span style="color: #ff0000;">
+      mc:Ignorable</span><span style="color: #0000ff;">="d"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid </span><span style="color: #ff0000;">Background</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{ThemeResource ApplicationPageBackgroundThemeBrush}</span><span style="color: #0000ff;">"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid.RowDefinitions</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">RowDefinition </span><span style="color: #ff0000;">Height</span><span style="color: #0000ff;">="Auto"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">RowDefinition </span><span style="color: #ff0000;">Height</span><span style="color: #0000ff;">="*"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid.RowDefinitions</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">StackPanel </span><span style="color: #ff0000;">Orientation</span><span style="color: #0000ff;">="Horizontal"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">FontIcon </span><span style="color: #ff0000;">HorizontalAlignment</span><span style="color: #0000ff;">="Left"</span><span style="color: #ff0000;">
+                      VerticalAlignment</span><span style="color: #0000ff;">="Top"</span><span style="color: #ff0000;">
+                      x:Name</span><span style="color: #0000ff;">="Hamburger"</span><span style="color: #ff0000;">
+                      FontFamily</span><span style="color: #0000ff;">="Segoe MDL2 Assets"</span><span style="color: #ff0000;">
+                      Glyph</span><span style="color: #0000ff;">="&amp;#xE700;"</span><span style="color: #ff0000;">
+                      PointerPressed</span><span style="color: #0000ff;">="BtnHam_Click"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">SymbolIcon </span><span style="color: #ff0000;">HorizontalAlignment</span><span style="color: #0000ff;">="Left"</span><span style="color: #ff0000;">
+                        VerticalAlignment</span><span style="color: #0000ff;">="Top"</span><span style="color: #ff0000;">
+                        Symbol</span><span style="color: #0000ff;">="Back"</span><span style="color: #ff0000;">
+                        PointerReleased</span><span style="color: #0000ff;">="BtnBack_Click"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">StackPanel</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">SplitView </span><span style="color: #ff0000;">Grid.Row</span><span style="color: #0000ff;">="1"</span><span style="color: #ff0000;">
+                   x:Name</span><span style="color: #0000ff;">="svw"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">SplitView.Pane</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid </span><span style="color: #ff0000;">Background</span><span style="color: #0000ff;">="Gold"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">TextBlock </span><span style="color: #ff0000;">Text</span><span style="color: #0000ff;">="汉堡内容"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">SplitView.Pane</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid </span><span style="color: #ff0000;">Background</span><span style="color: #0000ff;">="LightBlue"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">TextBlock </span><span style="color: #ff0000;">Text</span><span style="color: #0000ff;">="主要内容"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">SplitView</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Page</span><span style="color: #0000ff;">&gt;</span></pre>
+                            </div>
+                            <p>后台代码：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">using</span><span style="color: #000000;"> Windows.UI.Xaml.Controls;
+</span><span style="color: #0000ff;">using</span><span style="color: #000000;"> Windows.UI.Xaml.Input;
+</span><span style="color: #0000ff;">namespace</span><span style="color: #000000;"> Build2015XamlDemo
+{
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">sealed</span> <span style="color: #0000ff;">partial</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> SplitViewPage : Page
+    {
+        </span><span style="color: #0000ff;">public</span><span style="color: #000000;"> SplitViewPage()
+        {
+            </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.InitializeComponent();
+        }
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span> BtnHam_Click(<span style="color: #0000ff;">object</span><span style="color: #000000;"> sender, PointerRoutedEventArgs e)
+        {
+            e.Handled </span>= <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+            svw.IsPaneOpen </span>= !<span style="color: #000000;">svw.IsPaneOpen;
+        }
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span> BtnBack_Click(<span style="color: #0000ff;">object</span><span style="color: #000000;"> sender, PointerRoutedEventArgs e)
+        {
+            e.Handled </span>= <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+            Frame.GoBack();
+        }
+    }
+}</span></pre>
+                            </div>
+                            <p>PS：后台部分省略了个判断，作为示例不要在意。</p>
+                            <p>效果：</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209392518741.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="QQ截图20150516172026" src="http://images0.cnblogs.com/blog/484187/201505/162209399233815.png" alt="QQ截图20150516172026" width="516" height="360" border="0" /></a><a href="http://images0.cnblogs.com/blog/484187/201505/162209403762186.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="QQ截图20150516172032" src="http://images0.cnblogs.com/blog/484187/201505/162209408148486.png" alt="QQ截图20150516172032" width="516" height="360" border="0" /></a></p>
+                            <h2>2、SplitView 的 DisplayMode 属性</h2>
+                            <p>这个属性算是 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.splitview.aspx" target="_blank">SplitView</a> 里最重要的一个属性了，所以有必要说一下。<a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.displaymode.aspx" target="_blank">DisplayMode</a> 属性的类型是 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitviewdisplaymode.aspx" target="_blank">SplitViewDisplayMode</a>，是一个枚举类型。包含如下值：</p>
+                            <ul>
+                                <li>Overlay（<a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.splitview.aspx" target="_blank">SplitView</a> 的 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.displaymode.aspx" target="_blank">DisplayMode</a> 属性的默认值）</li>
+                                <li>Inline</li>
+                                <li>CompactOverlay</li>
+                                <li>CompactInline</li>
+                            </ul>
+                            <p>测试代码：</p>
+                            <p>XAML：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Page </span><span style="color: #ff0000;">x:Class</span><span style="color: #0000ff;">="Build2015XamlDemo.SplitViewModePage"</span><span style="color: #ff0000;">
+      xmlns</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span><span style="color: #ff0000;">
+      xmlns:x</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml"</span><span style="color: #ff0000;">
+      xmlns:local</span><span style="color: #0000ff;">="using:Build2015XamlDemo"</span><span style="color: #ff0000;">
+      xmlns:d</span><span style="color: #0000ff;">="http://schemas.microsoft.com/expression/blend/2008"</span><span style="color: #ff0000;">
+      xmlns:mc</span><span style="color: #0000ff;">="http://schemas.openxmlformats.org/markup-compatibility/2006"</span><span style="color: #ff0000;">
+      mc:Ignorable</span><span style="color: #0000ff;">="d"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid </span><span style="color: #ff0000;">Background</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{ThemeResource ApplicationPageBackgroundThemeBrush}</span><span style="color: #0000ff;">"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid.RowDefinitions</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">RowDefinition </span><span style="color: #ff0000;">Height</span><span style="color: #0000ff;">="Auto"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">RowDefinition </span><span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid.RowDefinitions</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">StackPanel </span><span style="color: #ff0000;">Orientation</span><span style="color: #0000ff;">="Horizontal"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">FontIcon </span><span style="color: #ff0000;">HorizontalAlignment</span><span style="color: #0000ff;">="Left"</span><span style="color: #ff0000;">
+                      VerticalAlignment</span><span style="color: #0000ff;">="Top"</span><span style="color: #ff0000;">
+                      x:Name</span><span style="color: #0000ff;">="Hamburger"</span><span style="color: #ff0000;">
+                      FontFamily</span><span style="color: #0000ff;">="Segoe MDL2 Assets"</span><span style="color: #ff0000;">
+                      Glyph</span><span style="color: #0000ff;">="&amp;#xE700;"</span><span style="color: #ff0000;">
+                      PointerPressed</span><span style="color: #0000ff;">="BtnHam_Click"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">SymbolIcon </span><span style="color: #ff0000;">HorizontalAlignment</span><span style="color: #0000ff;">="Left"</span><span style="color: #ff0000;">
+                        VerticalAlignment</span><span style="color: #0000ff;">="Top"</span><span style="color: #ff0000;">
+                        Symbol</span><span style="color: #0000ff;">="Back"</span><span style="color: #ff0000;">
+                        PointerReleased</span><span style="color: #0000ff;">="BtnBack_Click"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">StackPanel</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">SplitView </span><span style="color: #ff0000;">x:Name</span><span style="color: #0000ff;">="svw"</span><span style="color: #ff0000;">
+                   Grid.Row</span><span style="color: #0000ff;">="1"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">SplitView.Pane</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid </span><span style="color: #ff0000;">Background</span><span style="color: #0000ff;">="Gold"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">TextBlock </span><span style="color: #ff0000;">Text</span><span style="color: #0000ff;">="汉堡内容"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">SplitView.Pane</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ComboBox </span><span style="color: #ff0000;">x:Name</span><span style="color: #0000ff;">="cmb"</span><span style="color: #ff0000;">
+                          HorizontalAlignment</span><span style="color: #0000ff;">="Center"</span><span style="color: #ff0000;">
+                          VerticalAlignment</span><span style="color: #0000ff;">="Center"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">SplitView</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Page</span><span style="color: #0000ff;">&gt;</span></pre>
+                            </div>
+                            <p>后台代码：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">using</span><span style="color: #000000;"> System;
+</span><span style="color: #0000ff;">using</span><span style="color: #000000;"> Windows.UI.Xaml.Controls;
+</span><span style="color: #0000ff;">using</span><span style="color: #000000;"> Windows.UI.Xaml.Input;
+</span><span style="color: #0000ff;">namespace</span><span style="color: #000000;"> Build2015XamlDemo
+{
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">sealed</span> <span style="color: #0000ff;">partial</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> SplitViewModePage : Page
+    {
+        </span><span style="color: #0000ff;">public</span><span style="color: #000000;"> SplitViewModePage()
+        {
+            </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.InitializeComponent();
+            </span><span style="color: #0000ff;">var</span> modes = Enum.GetValues(<span style="color: #0000ff;">typeof</span><span style="color: #000000;">(SplitViewDisplayMode));
+            </span><span style="color: #0000ff;">foreach</span> (<span style="color: #0000ff;">var</span> mode <span style="color: #0000ff;">in</span><span style="color: #000000;"> modes)
+            {
+                cmb.Items.Add(mode.ToString());
+            }
+            cmb.SelectionChanged </span>+=<span style="color: #000000;"> Cmb_SelectionChanged;
+            cmb.SelectedIndex </span>= <span style="color: #800080;">0</span><span style="color: #000000;">;
+        }
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span> Cmb_SelectionChanged(<span style="color: #0000ff;">object</span><span style="color: #000000;"> sender, SelectionChangedEventArgs e)
+        {
+            </span><span style="color: #0000ff;">if</span> (cmb.SelectedItem != <span style="color: #0000ff;">null</span><span style="color: #000000;">)
+            {
+                </span><span style="color: #0000ff;">var</span> mode = (SplitViewDisplayMode)Enum.Parse(<span style="color: #0000ff;">typeof</span>(SplitViewDisplayMode), (<span style="color: #0000ff;">string</span><span style="color: #000000;">)cmb.SelectedItem);
+                svw.DisplayMode </span>=<span style="color: #000000;"> mode;
+            }
+        }
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span> BtnBack_Click(<span style="color: #0000ff;">object</span><span style="color: #000000;"> sender, PointerRoutedEventArgs e)
+        {
+            e.Handled </span>= <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+            Frame.GoBack();
+        }
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span> BtnHam_Click(<span style="color: #0000ff;">object</span><span style="color: #000000;"> sender, PointerRoutedEventArgs e)
+        {
+            e.Handled </span>= <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+            svw.IsPaneOpen </span>= !<span style="color: #000000;">svw.IsPaneOpen;
+        }
+    }
+}</span></pre>
+                            </div>
+                            <p>Overlay：</p>
+                            <p>在 Overlay 模式下，SplitView 在关闭状态下，<a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.pane.aspx" target="_blank">Pane</a> 里的内容不显示，在打开的状态下，<a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.pane.aspx" target="_blank">Pane</a> 里的内容就会像是在 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.content.aspx" target="_blank">Content</a> 上覆盖一层。</p>
+                            <p>Inline：</p>
+                            <p>此模式下，关闭状态与 Overlay 模式相同，不同的是在打开状态下，<a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.pane.aspx" target="_blank">Pane</a> 会推开 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.content.aspx" target="_blank">Content</a>，形成左侧 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.pane.aspx" target="_blank">Pane</a>，右侧 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.content.aspx" target="_blank">Content</a> 的效果。如图：</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209413601587.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="QQ截图20150516174539" src="http://images0.cnblogs.com/blog/484187/201505/162209419391931.png" alt="QQ截图20150516174539" width="1040" height="808" border="0" /></a></p>
+                            <p>CompactOverlay、CompactInline：</p>
+                            <p>打开模式参考上面，在关闭模式下，<a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.pane.aspx" target="_blank">Pane</a> 不会完全关闭，而是会留下一定的空间（该空间宽度由 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.aspx" target="_blank">SplitView</a> 控件的 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.compactpanelength.aspx" target="_blank">CompactPaneLength</a> 属性决定，默认为 48），我们可以用来显示 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.pane.aspx" target="_blank">Pane</a> 里每一项的图标，例如 Windows 10 10074 中的邮件应用。</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209425328044.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="QQ截图20150516174927" src="http://images0.cnblogs.com/blog/484187/201505/162209430644374.png" alt="QQ截图20150516174927" width="516" height="360" border="0" /></a></p>
+                            <h1>五、VisualStateTrigger</h1>
+                            <p>在当前 Web 页面开发中，因为越来越多的移动设备，响应式布局成为了一项重要的页面表示形式。经过时间验证，响应式布局的确十分有效。因此在 Windows 10 里，可以使用 VisualStateTrigger 来实现根据 App 的大小或其它因素来呈现不同的布局。</p>
+                            <h2>1、Demo 1 根据窗口宽度显示不同文本</h2>
+                            <p>XAML：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Page </span><span style="color: #ff0000;">x:Class</span><span style="color: #0000ff;">="Build2015XamlDemo.VisualStateTriggerDemo1Page"</span><span style="color: #ff0000;">
+      xmlns</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span><span style="color: #ff0000;">
+      xmlns:x</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml"</span><span style="color: #ff0000;">
+      xmlns:local</span><span style="color: #0000ff;">="using:Build2015XamlDemo"</span><span style="color: #ff0000;">
+      xmlns:d</span><span style="color: #0000ff;">="http://schemas.microsoft.com/expression/blend/2008"</span><span style="color: #ff0000;">
+      xmlns:mc</span><span style="color: #0000ff;">="http://schemas.openxmlformats.org/markup-compatibility/2006"</span><span style="color: #ff0000;">
+      mc:Ignorable</span><span style="color: #0000ff;">="d"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid </span><span style="color: #ff0000;">Background</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{ThemeResource ApplicationPageBackgroundThemeBrush}</span><span style="color: #0000ff;">"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualStateManager.VisualStateGroups</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualStateGroup</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState </span><span style="color: #ff0000;">x:Name</span><span style="color: #0000ff;">="narrow"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState.Setters</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Setter </span><span style="color: #ff0000;">Target</span><span style="color: #0000ff;">="status.Text"</span><span style="color: #ff0000;">
+                                Value</span><span style="color: #0000ff;">="Narrow view"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState.Setters</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState.StateTriggers</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">AdaptiveTrigger </span><span style="color: #ff0000;">MinWindowWidth</span><span style="color: #0000ff;">="0"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState.StateTriggers</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState </span><span style="color: #ff0000;">x:Name</span><span style="color: #0000ff;">="wide"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState.Setters</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Setter </span><span style="color: #ff0000;">Target</span><span style="color: #0000ff;">="status.Text"</span><span style="color: #ff0000;">
+                                Value</span><span style="color: #0000ff;">="Wide view"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState.Setters</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState.StateTriggers</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">AdaptiveTrigger </span><span style="color: #ff0000;">MinWindowWidth</span><span style="color: #0000ff;">="600"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState.StateTriggers</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualStateGroup</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualStateManager.VisualStateGroups</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">TextBlock </span><span style="color: #ff0000;">x:Name</span><span style="color: #0000ff;">="status"</span><span style="color: #ff0000;">
+                   FontSize</span><span style="color: #0000ff;">="40"</span><span style="color: #ff0000;">
+                   HorizontalAlignment</span><span style="color: #0000ff;">="Center"</span><span style="color: #ff0000;">
+                   VerticalAlignment</span><span style="color: #0000ff;">="Center"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Page</span><span style="color: #0000ff;">&gt;</span></pre>
+                            </div>
+                            <p>效果：</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209439393275.gif"><img style="display: inline;" title="image" src="http://images0.cnblogs.com/blog/484187/201505/162209449706690.gif" alt="image" width="204" height="240" /></a></p>
+                            <h2>2、为 SplitView 设置为响应式</h2>
+                            <p>对于大窗口来说，<a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.aspx" target="_blank">SplitView</a> 我们当然是想完整显示，而对于小窗口或者移动设备，我们并不想推开主要内容（因为推开了位置就更加不足了），而是想&ldquo;浮在&rdquo;主要内容上，因此我们可以对 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.splitview.aspx" target="_blank">SplitView</a> 作响应式处理。</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState.Setters</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Setter </span><span style="color: #ff0000;">Target</span><span style="color: #0000ff;">="splitView.DisplayMode"</span><span style="color: #ff0000;"> Value</span><span style="color: #0000ff;">="Inline"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState.Setters</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState.StateTriggers</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">AdaptiveTrigger </span><span style="color: #ff0000;">MinWindowWidth</span><span style="color: #0000ff;">="720"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState.StateTriggers</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState.Setters</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Setter </span><span style="color: #ff0000;">Target</span><span style="color: #0000ff;">="splitView.DisplayMode"</span><span style="color: #ff0000;"> Value</span><span style="color: #0000ff;">="Overlay"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState.Setters</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState.StateTriggers</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">AdaptiveTrigger </span><span style="color: #ff0000;">MinWindowWidth</span><span style="color: #0000ff;">= "0"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState.StateTriggers</span><span style="color: #0000ff;">&gt;</span></pre>
+                            </div>
+                            <h2>3、自定义 StateTrigger</h2>
+                            <p>在 10069 的 SDK 中，StateTrigger 就只有两种，一个是我们上面提到的 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.AdaptiveTrigger.aspx" target="_blank">AdaptiveTrigger</a>，另一个是 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetrigger.aspx" target="_blank">StateTrigger</a>，这个 StateTrigger 十分简单，有一个 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.statetrigger.isactive.aspx" target="_blank">IsActive</a> 属性，因此这个 StateTrigger 相当于一个开关，因为比较简单，所以大家可以自行尝试，这里就不给出示例了。</p>
+                            <p>回到正题，我们要实现一个 StateTrigger，那我们先看看内置的 StateTrigger，它们都继承自 StateTriggerBase，而 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx" target="_blank">StateTriggerBase</a> 又继承自 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.dependencyobject.aspx" target="_blank">DependencyObject</a>，因此我们可以定义依赖属性（StateTrigger 的 IsActive 属性也是一个依赖属性）。接下来我们实现我们的代码（这里我们实现一个根据设备类型的 StateTrigger）：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">using</span><span style="color: #000000;"> Windows.UI.Xaml;
+</span><span style="color: #0000ff;">namespace</span><span style="color: #000000;"> Build2015XamlDemo
+{
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">enum</span><span style="color: #000000;"> DeviceType
+    {
+        Unknown,
+        Desktop,
+        Mobile
+    }
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> DeviceTrigger : StateTriggerBase
+    {
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">readonly</span> DependencyProperty DeviceProperty = DependencyProperty.Register(nameof(Device), <span style="color: #0000ff;">typeof</span>(DeviceType), <span style="color: #0000ff;">typeof</span>(DeviceTrigger), <span style="color: #0000ff;">new</span><span style="color: #000000;"> PropertyMetadata(DeviceType.Unknown, DeviceChanged));
+        </span><span style="color: #0000ff;">public</span><span style="color: #000000;"> DeviceType Device
+        {
+            </span><span style="color: #0000ff;">get</span><span style="color: #000000;">
+            {
+                </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> (DeviceType)GetValue(DeviceProperty);
+            }
+            </span><span style="color: #0000ff;">set</span><span style="color: #000000;">
+            {
+                SetValue(DeviceProperty, value);
+            }
+        }
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> DeviceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            </span><span style="color: #0000ff;">var</span> trigger =<span style="color: #000000;"> (DeviceTrigger)d;
+            </span><span style="color: #0000ff;">var</span> value =<span style="color: #000000;"> (DeviceType)e.NewValue;
+            </span><span style="color: #0000ff;">var</span> qualifiers =<span style="color: #000000;"> Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues;
+            </span><span style="color: #0000ff;">if</span> (qualifiers.ContainsKey(<span style="color: #800000;">"</span><span style="color: #800000;">DeviceFamily</span><span style="color: #800000;">"</span><span style="color: #000000;">))
+            {
+                </span><span style="color: #0000ff;">switch</span> (qualifiers[<span style="color: #800000;">"</span><span style="color: #800000;">DeviceFamily</span><span style="color: #800000;">"</span><span style="color: #000000;">])
+                {
+                    </span><span style="color: #0000ff;">case</span> <span style="color: #800000;">"</span><span style="color: #800000;">Desktop</span><span style="color: #800000;">"</span><span style="color: #000000;">:
+                        trigger.SetActive(trigger.Device </span>==<span style="color: #000000;"> DeviceType.Desktop);
+                        </span><span style="color: #0000ff;">break</span><span style="color: #000000;">;
+                    </span><span style="color: #0000ff;">case</span> <span style="color: #800000;">"</span><span style="color: #800000;">Mobile</span><span style="color: #800000;">"</span><span style="color: #000000;">:
+                        trigger.SetActive(trigger.Device </span>==<span style="color: #000000;"> DeviceType.Mobile);
+                        </span><span style="color: #0000ff;">break</span><span style="color: #000000;">;
+                }
+            }
+        }
+    }
+}</span></pre>
+                            </div>
+                            <p>其中 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.statetriggerbase.setactive.aspx" target="_blank">SetActive</a> 方法传入一个布尔值，使该 StateTrigger 生效或失效。</p>
+                            <p>XAML：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Page </span><span style="color: #ff0000;">x:Class</span><span style="color: #0000ff;">="Build2015XamlDemo.VisualStateTriggerDemo2Page"</span><span style="color: #ff0000;">
+      xmlns</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span><span style="color: #ff0000;">
+      xmlns:x</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml"</span><span style="color: #ff0000;">
+      xmlns:local</span><span style="color: #0000ff;">="using:Build2015XamlDemo"</span><span style="color: #ff0000;">
+      xmlns:d</span><span style="color: #0000ff;">="http://schemas.microsoft.com/expression/blend/2008"</span><span style="color: #ff0000;">
+      xmlns:mc</span><span style="color: #0000ff;">="http://schemas.openxmlformats.org/markup-compatibility/2006"</span><span style="color: #ff0000;">
+      mc:Ignorable</span><span style="color: #0000ff;">="d"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid </span><span style="color: #ff0000;">Background</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{ThemeResource ApplicationPageBackgroundThemeBrush}</span><span style="color: #0000ff;">"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualStateManager.VisualStateGroups</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualStateGroup</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState </span><span style="color: #ff0000;">x:Name</span><span style="color: #0000ff;">="Desktop"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState.Setters</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Setter </span><span style="color: #ff0000;">Target</span><span style="color: #0000ff;">="device.Text"</span><span style="color: #ff0000;">
+                                Value</span><span style="color: #0000ff;">="Desktop"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState.Setters</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState.StateTriggers</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">local:DeviceTrigger </span><span style="color: #ff0000;">Device</span><span style="color: #0000ff;">="Desktop"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState.StateTriggers</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState </span><span style="color: #ff0000;">x:Name</span><span style="color: #0000ff;">="Mobile"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState.Setters</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Setter </span><span style="color: #ff0000;">Target</span><span style="color: #0000ff;">="device.Text"</span><span style="color: #ff0000;">
+                                Value</span><span style="color: #0000ff;">="Mobile"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState.Setters</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">VisualState.StateTriggers</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">local:DeviceTrigger </span><span style="color: #ff0000;">Device</span><span style="color: #0000ff;">="Mobile"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState.StateTriggers</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualState</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualStateGroup</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">VisualStateManager.VisualStateGroups</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">TextBlock </span><span style="color: #ff0000;">x:Name</span><span style="color: #0000ff;">="device"</span><span style="color: #ff0000;">
+                   HorizontalAlignment</span><span style="color: #0000ff;">="Center"</span><span style="color: #ff0000;">
+                   VerticalAlignment</span><span style="color: #0000ff;">="Center"</span><span style="color: #ff0000;">
+                   FontSize</span><span style="color: #0000ff;">="40"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Page</span><span style="color: #0000ff;">&gt;</span></pre>
+                            </div>
+                            <p>效果：</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209460485120.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="QQ截图20150516193116" src="http://images0.cnblogs.com/blog/484187/201505/162209465795747.png" alt="QQ截图20150516193116" width="516" height="360" border="0" /></a><a href="http://images0.cnblogs.com/blog/484187/201505/162209470328819.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="QQ截图20150516193138" src="http://images0.cnblogs.com/blog/484187/201505/162209475645149.png" alt="QQ截图20150516193138" width="408" height="726" border="0" /></a></p>
+                            <h1>六、RelativePanel</h1>
+                            <p>这是一个新的系统内置控件，我们可以叫它为相对面板。</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209482511292.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="无标题" src="http://images0.cnblogs.com/blog/484187/201505/162209490174393.png" alt="无标题" width="960" height="540" border="0" /></a></p>
+                            <p>这幅图是今年 Build 大会 ppt 上的一页，上面很好地说明了这个控件应该如何使用。这个控件十分像安卓中的 RelativeLayout，因为安卓没怎么学过，这里就不班门弄斧了。</p>
+                            <h1>七、Transform3D（3D 变换）</h1>
+                            <p>实例代码：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Page </span><span style="color: #ff0000;">x:Class</span><span style="color: #0000ff;">="Build2015XamlDemo.Transform3DPage"</span><span style="color: #ff0000;">
+      xmlns</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span><span style="color: #ff0000;">
+      xmlns:x</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml"</span><span style="color: #ff0000;">
+      xmlns:local</span><span style="color: #0000ff;">="using:Build2015XamlDemo"</span><span style="color: #ff0000;">
+      xmlns:d</span><span style="color: #0000ff;">="http://schemas.microsoft.com/expression/blend/2008"</span><span style="color: #ff0000;">
+      xmlns:mc</span><span style="color: #0000ff;">="http://schemas.openxmlformats.org/markup-compatibility/2006"</span><span style="color: #ff0000;">
+      mc:Ignorable</span><span style="color: #0000ff;">="d"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid </span><span style="color: #ff0000;">Background</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{ThemeResource ApplicationPageBackgroundThemeBrush}</span><span style="color: #0000ff;">"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid </span><span style="color: #ff0000;">Background</span><span style="color: #0000ff;">="Black"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid.Transform3D</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">PerspectiveTransform3D </span><span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid.Transform3D</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">StackPanel </span><span style="color: #ff0000;">HorizontalAlignment</span><span style="color: #0000ff;">="Center"</span><span style="color: #ff0000;">
+                        VerticalAlignment</span><span style="color: #0000ff;">="Center"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Border </span><span style="color: #ff0000;">Width</span><span style="color: #0000ff;">="200"</span><span style="color: #ff0000;">
+                        Height</span><span style="color: #0000ff;">="100"</span><span style="color: #ff0000;">
+                        Background</span><span style="color: #0000ff;">="#FF11321E"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Border.Transform3D</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">CompositeTransform3D </span><span style="color: #ff0000;">RotationX</span><span style="color: #0000ff;">="-45"</span><span style="color: #ff0000;">
+                                              CenterY</span><span style="color: #0000ff;">="100"</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">CompositeTransform3D</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Border.Transform3D</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">TextBlock </span><span style="color: #ff0000;">Text</span><span style="color: #0000ff;">="Hello"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Border</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Border </span><span style="color: #ff0000;">Width</span><span style="color: #0000ff;">="200"</span><span style="color: #ff0000;">
+                        Height</span><span style="color: #0000ff;">="100"</span><span style="color: #ff0000;">
+                        Background</span><span style="color: #0000ff;">="#FF0B5B29"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Border.Transform3D</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">CompositeTransform3D </span><span style="color: #ff0000;">RotationX</span><span style="color: #0000ff;">="45"</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">CompositeTransform3D</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Border.Transform3D</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">TextBlock </span><span style="color: #ff0000;">Text</span><span style="color: #0000ff;">="World"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Border</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">StackPanel</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Page</span><span style="color: #0000ff;">&gt;</span></pre>
+                            </div>
+                            <p>效果：</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209496267278.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="QQ截图20150516201235" src="http://images0.cnblogs.com/blog/484187/201505/162209501891851.png" alt="QQ截图20150516201235" width="516" height="368" border="0" /></a></p>
+                            <p>是不是有点立体的感觉呢？(●'◡'●)</p>
+                            <p>现在 Windows 10 开始菜单中的磁贴 3D 变换效果也是用这种方式实现的哦。</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209507353951.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="图片5" src="http://images0.cnblogs.com/blog/484187/201505/162209516102852.png" alt="图片5" width="356" height="353" border="0" /></a></p>
+                            <h1>八、自定义窗口标题栏</h1>
+                            <p>因为这点在我机子上显示的是错误的（SDK 没完成的原因吧），因此使用 Build 大会的 ppt 的图片好了。</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209523761252.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="无标题2" src="http://images0.cnblogs.com/blog/484187/201505/162209532671625.png" alt="无标题2" width="960" height="540" border="0" /></a></p>
+                            <p>倒数第二行告诉系统使用自定义标题栏，不使用系统标题栏。</p>
+                            <p>最后一行则使用已经渲染的控件作为标题栏。（需要注意的是&ldquo;<span style="color: #ff0000;">已渲染</span>&rdquo;这几个字，跟 <a href="https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.media.imaging.RenderTargetBitmap.aspx" target="_blank">RenderTargetBitmap</a> 类的 Render 方法类似）</p>
+                            <h1>九、新的绑定&mdash;&mdash;x:Bind</h1>
+                            <p>在 Windows 10 的 XAML 里，新添加了这种新的绑定方式，那么既然已经有旧的绑定（{Binding}），那为什么还需要新的绑定呢？必然是有好处的。</p>
+                            <p>这里有两幅 Build 大会 ppt 的图片：</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209541894540.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="无标题3" src="http://images0.cnblogs.com/blog/484187/201505/162209550325197.png" alt="无标题3" width="960" height="540" border="0" /></a></p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209560795383.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="无标题4" src="http://images0.cnblogs.com/blog/484187/201505/162209569852527.png" alt="无标题4" width="960" height="540" border="0" /></a></p>
+                            <p>可以看出，无论是 CPU 占用还是内存占用，新的绑定（{x:Bind}）都要优于以前的绑定（{Binding}）。</p>
+                            <h2>1、为什么 x:Bind 的性能这么好？</h2>
+                            <p>在 Build 大会上，微软介绍 x:Bind 使用的是&ldquo;compiled binding&rdquo;，即编译时绑定。而传统的绑定，是动态的，例如数据源你可能在运行时从 int 变成 string 都说不定，因此系统不得不承受这些动态变换带来的损失。而新的绑定，是在编译时进行绑定，因此类型都是已知的，那么类型的转换也能够明确确定。</p>
+                            <h2>2、试试 x:Bind</h2>
+                            <p>XAML：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">TextBlock </span><span style="color: #ff0000;">Text</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{x:Bind Path=Relax}</span><span style="color: #0000ff;">"</span> <span style="color: #0000ff;">/&gt;</span></pre>
+                            </div>
+                            <p>后台 cs：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">sealed</span> <span style="color: #0000ff;">partial</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> XBindDemo1 : Page
+    {
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">string</span> Relax = <span style="color: #800000;">"</span><span style="color: #800000;">坐和放宽</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">public</span><span style="color: #000000;"> XBindDemo1()
+        {
+            </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.InitializeComponent();
+        }
+    }</span></pre>
+                            </div>
+                            <p>效果：</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209577519926.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="QQ截图20150516205159" src="http://images0.cnblogs.com/blog/484187/201505/162209582352243.png" alt="QQ截图20150516205159" width="516" height="368" border="0" /></a></p>
+                            <p>这是很不可思议的，我们没有声明 DataContext。但实现效果就是这么棒！</p>
+                            <p>从 Build 大会的 ppt 我们知道：</p>
+                            <ol>
+                                <li>x:Bind 为强类型；</li>
+                                <li>x:Bind 的上下文为当前 Page 或 UserControl（<span style="color: #ff0000;"><strong>且无法更改！</strong></span>）；</li>
+                                <li>x:Bind 的 Mode 默认为 OneTime。</li>
+                            </ol>
+                            <p>假如我们将上面的后台代码中的 Relax 误拼写为 Ralex 的话，编译会得到如下错误：</p>
+                            <p><a href="http://images0.cnblogs.com/blog/484187/201505/162209587677571.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="QQ截图20150516205936" src="http://images0.cnblogs.com/blog/484187/201505/162209592049171.png" alt="QQ截图20150516205936" width="465" height="66" border="0" /></a></p>
+                            <h2>3、事件绑定</h2>
+                            <p>你没看错，新的绑定能够绑定事件处理了。</p>
+                            <p>添加新的测试代码：</p>
+                            <p>XAML：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Button </span><span style="color: #ff0000;">Content</span><span style="color: #0000ff;">="click bind"</span><span style="color: #ff0000;">
+                    Click</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{x:Bind Path=MyClick}</span><span style="color: #0000ff;">"</span> <span style="color: #0000ff;">/&gt;</span></pre>
+                            </div>
+                            <p>后台代码：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">async</span> <span style="color: #0000ff;">void</span> MyClick(<span style="color: #0000ff;">object</span><span style="color: #000000;"> sender, RoutedEventArgs e)
+        {
+            </span><span style="color: #0000ff;">await</span> <span style="color: #0000ff;">new</span> MessageDialog(<span style="color: #800000;">"</span><span style="color: #800000;">you click button</span><span style="color: #800000;">"</span><span style="color: #000000;">).ShowAsync();
+        }</span></pre>
+                            </div>
+                            <p>编译，运行，通过。</p>
+                            <p>可能你会问，这样有什么意思，只不过将 Click="MyClick" 换成上面的写法而已，而且敲的代码更多了。</p>
+                            <p>现在我们先将 MyClick 的第二个参数的类型改成 object 试试。</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">async</span> <span style="color: #0000ff;">void</span> MyClick(<span style="color: #0000ff;">object</span> sender, <span style="color: #0000ff;">object</span><span style="color: #000000;"> e)
+        {
+            </span><span style="color: #0000ff;">await</span> <span style="color: #0000ff;">new</span> MessageDialog(<span style="color: #800000;">"</span><span style="color: #800000;">you click button</span><span style="color: #800000;">"</span><span style="color: #000000;">).ShowAsync();
+        }</span></pre>
+                            </div>
+                            <p>竟然能正常运行！！！</p>
+                            <p>这就是新的绑定的威力，在事件的绑定上，有一定的&ldquo;协变&rdquo;（请与 C# 中协变区分清楚，这里只是借用一下概念，是两种完全不同的东西）。</p>
+                            <p>那么什么样的方法才能够被绑定呢？</p>
+                            <p>根据官方现在的文档，有以下几点需要注意。</p>
+                            <ul>
+                                <li>没有方法参数，例如 void MyClick(){} 也能够被上面的 Click 所绑定；</li>
+                                <li>完全匹配，跟上面最开始的代码一样；</li>
+                                <li>方法参数是子类，例如上面将 RoutedEventArgs 修改为 object 后的情况。</li>
+                                <li>不支持重载，例如上面三点的方法同时存在两个或以上就没法通过编译了。</li>
+                                <li>暂时不是所有事件都支持，关于这点，我们只能在自己测试了，微软官方还没有详细文档说明那些事件是支持的。</li>
+                                <li>由于没有传统绑定的 CommandParameter，所以这种情况下还是需要使用传统的绑定。</li>
+                            </ul>
+                            <h2>4、模板中使用 x:Bind</h2>
+                            <p>由于上面也说了，x:Bind 是强类型的，因此必须在模板中声明数据类型。</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ListView</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ListView.ItemTemplate</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">DataTemplate </span><span style="color: #ff0000;">x:DataType</span><span style="color: #0000ff;">="local:FreeBookCategory"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">StackPanel</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">SymbolIcon </span><span style="color: #ff0000;">Symbol</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{x:Bind Symbol}</span><span style="color: #0000ff;">"</span><span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">TextBlock </span><span style="color: #ff0000;">Text</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{x:Bind Name}</span><span style="color: #0000ff;">"</span><span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Button </span><span style="color: #ff0000;">Click</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{x:Bind Click}</span><span style="color: #0000ff;">"</span><span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">StackPanel</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">DataTemplate</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">ListView.ItemTemplate</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">ListView</span><span style="color: #0000ff;">&gt;</span></pre>
+                            </div>
+                            <h2>5、在资源字典中使用 x:Bind</h2>
+                            <p>这点在官方说明中是最为繁琐的。</p>
+                            <p>首先我们新建一个资源文件，例如就叫 MyTemplate.xaml。</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ResourceDictionary </span><span style="color: #ff0000;">xmlns</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span><span style="color: #ff0000;">
+                    xmlns:x</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml"</span><span style="color: #ff0000;">
+                    xmlns:local</span><span style="color: #0000ff;">="using:Build2015XamlDemo"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">DataTemplate </span><span style="color: #ff0000;">x:Key</span><span style="color: #0000ff;">="RelaxTemplate"</span><span style="color: #ff0000;"> x:DataType</span><span style="color: #0000ff;">="local:Person"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">TextBlock </span><span style="color: #ff0000;">Text</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{x:Bind Name}</span><span style="color: #0000ff;">"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">DataTemplate</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">ResourceDictionary</span><span style="color: #0000ff;">&gt;</span></pre>
+                            </div>
+                            <p>Person 类的定义如下：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">namespace</span><span style="color: #000000;"> Build2015XamlDemo
+{
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> Person
+    {
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">string</span><span style="color: #000000;"> Name
+        {
+            </span><span style="color: #0000ff;">get</span><span style="color: #000000;">;
+            </span><span style="color: #0000ff;">set</span><span style="color: #000000;">;
+        }
+    }
+}</span></pre>
+                            </div>
+                            <p>这时候编译是不通过的。</p>
+                            <p>新建一个 MyTemplate.xaml.cs 的文件。</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">partial</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> MyTemplate
+    {
+        </span><span style="color: #0000ff;">public</span><span style="color: #000000;"> MyTemplate()
+        {
+            InitializeComponent();
+        }
+    }</span></pre>
+                            </div>
+                            <p>修改上面的 XAML 文件。</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ResourceDictionary </span><span style="color: #ff0000;">x:Class</span><span style="color: #0000ff;">="Build2015XamlDemo.MyTemplate"</span><span style="color: #ff0000;"> 
+                    xmlns</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span><span style="color: #ff0000;">
+                    xmlns:x</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml"</span><span style="color: #ff0000;">
+                    xmlns:local</span><span style="color: #0000ff;">="using:Build2015XamlDemo"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">DataTemplate </span><span style="color: #ff0000;">x:Key</span><span style="color: #0000ff;">="RelaxTemplate"</span><span style="color: #ff0000;"> x:DataType</span><span style="color: #0000ff;">="local:Person"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">TextBlock </span><span style="color: #ff0000;">Text</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{x:Bind Name}</span><span style="color: #0000ff;">"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">DataTemplate</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">ResourceDictionary</span><span style="color: #0000ff;">&gt;</span></pre>
+                            </div>
+                            <p>注意多了一个x:Class，填写 MyTemplate 类的命名空间全路径。</p>
+                            <p>这时候就可以编译通过了，之后就可以在其它地方使用这个 Template 了。</p>
+                            <h2>六、啰嗦一句</h2>
+                            <p>x:Bind 并不能完全代替旧的 Binding ，因为在上面也说了，x:Bind 是强类型的，因此像使用 Json.NET 的 JsonObject 或其它动态类型的情况下，仍然需要用到旧的 Binding。但是如果能使用新的绑定，则应该尽量使用新的绑定，因为性能有较大幅度的提升。</p>
+                            <h1>十、分阶段渲染</h1>
+                            <p>在 Windows 10 中的 XAML，增加了一种新语法实现分阶段渲染。这里我们还是用上面的 Person 类。新建页面，编写如下代码</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Page </span><span style="color: #ff0000;">x:Class</span><span style="color: #0000ff;">="Build2015XamlDemo.XPhaseDemo"</span><span style="color: #ff0000;">
+      xmlns</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span><span style="color: #ff0000;">
+      xmlns:x</span><span style="color: #0000ff;">="http://schemas.microsoft.com/winfx/2006/xaml"</span><span style="color: #ff0000;">
+      xmlns:local</span><span style="color: #0000ff;">="using:Build2015XamlDemo"</span><span style="color: #ff0000;">
+      xmlns:d</span><span style="color: #0000ff;">="http://schemas.microsoft.com/expression/blend/2008"</span><span style="color: #ff0000;">
+      xmlns:mc</span><span style="color: #0000ff;">="http://schemas.openxmlformats.org/markup-compatibility/2006"</span><span style="color: #ff0000;">
+      mc:Ignorable</span><span style="color: #0000ff;">="d"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid </span><span style="color: #ff0000;">Background</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{ThemeResource ApplicationPageBackgroundThemeBrush}</span><span style="color: #0000ff;">"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ListView </span><span style="color: #ff0000;">ItemsSource</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{x:Bind LotsOfPersons}</span><span style="color: #0000ff;">"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ListView.ItemTemplate</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">DataTemplate </span><span style="color: #ff0000;">x:DataType</span><span style="color: #0000ff;">="local:Person"</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">TextBlock </span><span style="color: #ff0000;">Text</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{x:Bind Name}</span><span style="color: #0000ff;">"</span><span style="color: #ff0000;">
+                                   Foreground</span><span style="color: #0000ff;">="Red"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">TextBlock </span><span style="color: #ff0000;">Text</span><span style="color: #0000ff;">="</span><span style="color: #808000;">{x:Bind Name}</span><span style="color: #0000ff;">"</span><span style="color: #ff0000;">
+                                   Foreground</span><span style="color: #0000ff;">="Green"</span><span style="color: #ff0000;">
+                                   x:Phase</span><span style="color: #0000ff;">="1"</span> <span style="color: #0000ff;">/&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">DataTemplate</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">ListView.ItemTemplate</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">ListView</span><span style="color: #0000ff;">&gt;</span>
+                                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Grid</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">Page</span><span style="color: #0000ff;">&gt;</span></pre>
+                            </div>
+                            <p>后台代码：</p>
+                            <div class="cnblogs_code" style="background-color: #f5f5f5; border: #cccccc 1px solid; padding: 5px;">
+<pre><span style="color: #0000ff;">using</span><span style="color: #000000;"> System;
+</span><span style="color: #0000ff;">using</span><span style="color: #000000;"> System.Collections.Generic;
+</span><span style="color: #0000ff;">using</span><span style="color: #000000;"> Windows.UI.Xaml.Controls;
+</span><span style="color: #0000ff;">namespace</span><span style="color: #000000;"> Build2015XamlDemo
+{
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">sealed</span> <span style="color: #0000ff;">partial</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> XPhaseDemo : Page
+    {
+        </span><span style="color: #0000ff;">public</span> List&lt;Person&gt;<span style="color: #000000;"> LotsOfPersons
+        {
+            </span><span style="color: #0000ff;">get</span><span style="color: #000000;">;
+            </span><span style="color: #0000ff;">set</span><span style="color: #000000;">;
+        }
+        </span><span style="color: #0000ff;">public</span><span style="color: #000000;"> XPhaseDemo()
+        {
+            </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.InitializeComponent();
+            LotsOfPersons </span>= <span style="color: #0000ff;">new</span> List&lt;Person&gt;<span style="color: #000000;">();
+            </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i = <span style="color: #800080;">0</span>; i &lt; <span style="color: #800080;">10000</span>; i++<span style="color: #000000;">)
+            {
+                LotsOfPersons.Add(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> Person()
+                {
+                    Name </span>=<span style="color: #000000;"> Guid.NewGuid().ToString()
+                });
+            }
+        }
+    }
+}</span></pre>
+                            </div>
+                            <p>运行程序的话，应该会看见有一些红色，然后很快就变成绿色的。x:Phase 的值越大，越后渲染。</p>
+                            <p>由于处理速度太快，因此也不太好截图，性能差点的机器应该会能看见效果的。</p>
+                            <p>这点对于移动设备等性能较差的机器改善用户体验很有用。</p>
+                            <p>&nbsp;</p>
+                            <p><span style="font-size: 18pt;"><strong><span style="color: #ff0000;">转载请保留到该<a href="http://www.cnblogs.com/h82258652/p/4508777.html" target="_blank">页面</a>的链接<a href="http://www.cnblogs.com/h82258652/p/4508777.html" target="_blank">http://www.cnblogs.com/h82258652/p/4508777.html</a>。谢谢！</span></strong></span></p>
+                        </div><div id="MySignature"></div>
+                        <div class="clear"></div>
+                        <div id="blog_post_info_block">
+                            <div id="blog_post_info">
+                            </div>
+                            <div class="clear"></div>
+                            <div id="post_next_prev"></div>
+                        </div>
+                    </div>
+                    <ul class="postmetadata">
+                        <li class="icon_cat" id="BlogPostCategory"></li>
+                        <li class="icon_bullet" id="EntryTag"></li>
+                    </ul>
+                </div>
+                <script type="text/javascript">var allowComments=true,isLogined=true,cb_blogId=181804,cb_entryId=4508777,cb_blogApp=currentBlogApp,cb_blogUserGuid='bb456abb-e24f-e211-aa8f-842b2b196315',cb_entryCreatedDate='2015/5/16 22:10:00';loadViewCount(cb_entryId);</script>
+                <script type="text/javascript">
+    var m = window.__blog.postRendered;
+    if (m) { m(__$("post")); }
+                </script>
+                <script type="text/javascript">
+    var m = window.__blog.postRenderPosts;
+    if (m) { m(); }
+                </script>
+                <a name="!comments"></a><div id="blog-comments-placeholder"></div>
+                <script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+                <div id="comment_form" class="commentform">
+                    <a name="commentform"></a>
+                    <div id="divCommentShow"></div>
+                    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+                    <div id="comment_form_container"></div>
+                    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+                    <div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+                    <div id="opt_under_post"></div>
+                    <script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+    fixPostBodyFormat();
+                    </script>
+                    <div id="ad_under_post_holder">
+                        <script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+    })();
+                        </script>
+                        <script type='text/javascript'>
+    try {
+        if (enableGoogleAd) {
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1346480159711-0').addService(googletag.pubads());
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C2', [468, 60], 'div-gpt-ad-1410860226396-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        };
+    } catch (e) { }
+                        </script>
+                        <div id="google_ad_c1" class="c_ad_block">
+                            <div id='div-gpt-ad-1346480159711-0' style='width:300px; height:250px;'>
+                                <script type='text/javascript'>
+        try {
+            if (enableGoogleAd) {
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1346480159711-0'); });
+            } else {
+                $('#div-gpt-ad-1346480159711-0').hide();
+            }
+    } catch (e) { }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="under_post_news"></div>
+                    <div id="google_ad_c2" class="c_ad_block">
+                        <div id='div-gpt-ad-1410860226396-0' style='width:468px; height:60px;'>
+                            <script type='text/javascript'>
+try {
+    if (enableGoogleAd) {
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1410860226396-0'); });
+    } else {
+        $('#div-gpt-ad-1346480159711-0').hide();
+    }
+} catch (e) { }
+                            </script>
+                        </div>
+                    </div>
+                    <div id="under_post_kb"></div>
+                    <div id="HistoryToday" class="c_ad_block"></div>
+                    <script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+                    </script>
+                </div>
+
+            </div>
+
+            <script type="text/javascript">
+            var m = window.__blog.contentRendered;
+            if (m) { m(__$("content")); }
+            </script>
+
+            <div id="sidebar">
+
+                <div id="about">
+                    <div>
+                        <h2 id="about_title">About</h2>
+                        <div id="about_body">
+                            <div id="blog-news"></div>
+                            <script type="text/javascript">loadBlogNews();</script>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                var m = window.__blog.aboutRendered;
+                if (m) { m(__$("about")); }
+                </script>
+
+                <div id="mySearchWrapper">
+                    <div id="mySearch">
+                        <input type="image" src="/skins/Minyx2_Lite/images/btnsearch.gif" id="btnZzk" class="submit" onclick="zzk_go();return false;" />
+                        <label class="lb_search"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="keyword" /></label>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                var m = window.__blog.searchFormRendered;
+                if (m) { m(__$("searchform")); }
+                </script>
+                <div id="sideMain">
+                </div>
+                <div id="sideRight">
+                </div>
+                <div id="sideLeft">
+                </div>
+
+                <div id="sideContainer">
+                </div>
+                <script type="text/javascript">
+                    $.ajax({
+                        url: '/' + currentBlogApp + '/mvc/blog/Minyx2_Lite_SideColumn.aspx',
+                        data: '{}',
+                        type: 'post',
+                        dataType: 'text',
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            if (data) {
+                                $("#sideContainer").html(data);
+                                loadBlogDefaultCalendar();
+                                loadBlogSideBlocks();
+                                var m = window.__blog.sideContainerRendered;
+                                if (m) { m(__$("sideContainer")); }
+                                window.__blog.sidebar.__layout();
+                            }
+                        }
+                    });
+
+                </script>
+
+            </div>
+
+            <script type="text/javascript">
+            var m = window.__blog.sidebarRendered;
+            if (m) { m(__$("sidebar")); }
+            </script>
+
+            <div id="footer">
+
+                <p id="logoFoot">
+                    <a href="http://www.spiga.com.mx/" title="Agencia Interactiva Spiga">www.spiga.com.mx</a>
+                </p>
+                <div class="footText">
+                    <p>
+                        Copyright &copy;2015 h82258652
+                    </p>
+                    <p>
+                        <a href="http://www.cnblogs.com">博客园</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+        var m = window.__blog.wrapperRendered;
+        if (m) { m(__$("wrapper")); }
+        </script>
+
+    </div>
+    <script type="text/javascript">
+    var m = window.__blog.containerRendered;
+    if (m) { m(__$("container")); }
+    </script>
+</body>
+</html>
