@@ -106,9 +106,8 @@ body {
 
 /* 头部 */
 #header {
-    height: 40px;
-    padding-top: 42px;
-    padding-left: 10px;
+    height: 37px;
+    padding-top: 32px;
     padding-right: 10px;
 }
 
@@ -118,28 +117,36 @@ body {
 }
 
 #header h1 {
-    margin-left: 212px;
     font-weight: normal;
     display: inline;
-}
-
-/* 响应式 */
-@media screen and (max-width:1000px) {
-    #header h1 {
-        margin-left: 15px;
-    }
+    /* 边框 */
+    border-bottom-color: darkgreen;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+    border-right-style: double;
+    border-right-color: darkgreen;
+    border-radius: 0 0 10px 0;
+    background: linear-gradient(to right,rgb(19,147,185),rgba(72,181,24,0.9)); /* 背景 */
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    box-shadow: 0 0 0 1px #5F5A4B, 1px 1px 6px 1px skyblue; /* 阴影 */
 }
 
 #header a {
-    color: gray;
+    color: lightgray;
 }
 
     #header a:hover {
-        color: orange;
+        color: white;
     }
 
 #header small {
     font-size: small;
+    color: rgb(20,20,20);
+    margin-left: -3px;
 }
 
 /* 主体 */
@@ -150,7 +157,7 @@ body {
 
 /* 内容 */
 #content {
-    /*position: absolute;*/
+    margin-top: 5px;
     margin-right: 185px; /* 留 185px 给侧边栏 */
     z-index: 1; /* 在侧边栏上一层显示 */
 }
@@ -203,9 +210,6 @@ body {
             }
 
 .post-list-item {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 5px;
     margin-bottom: 15px;
     word-break: break-all;
 }
@@ -233,6 +237,7 @@ body {
         background-position: left center;
         background-size: contain;
         padding-left: 30px;
+        padding-top: 5px;
     }
 
         .c_b_p_desc a:hover {
@@ -278,6 +283,7 @@ body {
     float: right;
     background-color: white;
     border: 1px solid black;
+    width: auto;
 }
 
 /* 作者信息 */
@@ -287,7 +293,7 @@ body {
     position: fixed;
     bottom: 5px;
     width: 120px;
-    right: 200px;
+    right: 180px;
     border: 2px solid skyblue;
     padding: 10px;
     background-color: #fff;
@@ -638,7 +644,7 @@ body {
 /* 侧边栏 */
 #sidebar {
     float: right;
-    top: 82px;
+    top: 74px;
     position: absolute;
     right: 20px;
     width: 160px;
