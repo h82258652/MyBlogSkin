@@ -185,6 +185,9 @@ body {
             background-size: 28px 28px;
             background-position: left center;
             padding-left: 36px;
+            -moz-transition: 0.5s;
+            -o-transition: 0.5s;
+            -webkit-transition: 0.5s;
             transition: 0.5s; /* 转到 hover 的过渡时间 */
         }
 
@@ -211,6 +214,7 @@ body {
 
 .post-list-item {
     margin-bottom: 15px;
+    -ms-word-break: break-all;
     word-break: break-all;
 }
 
@@ -614,6 +618,9 @@ body {
         padding-right: 10px;
         padding-bottom: 4px;
         padding-left: 10px;
+        -moz-transition: 0.5s;
+        -o-transition: 0.5s;
+        -webkit-transition: 0.5s;
         transition: 0.5s;
     }
 
@@ -685,7 +692,7 @@ body {
     color: lightgray;
     background-color: rgba(0,0,0,0.5);
     border-radius: 0px 0px 5px 5px;
-    margin-top: -4px;
+    margin-top: 0px;
     margin-bottom: 5px;
     padding: 5px;
 }
