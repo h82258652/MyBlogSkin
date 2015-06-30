@@ -3,15 +3,9 @@
 /* 全局 */
 * {
     /* 去除外边距 */
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+    margin: 0;
     /* 去除内边距 */
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
+    padding: 0;
     /* 字体 */
     font-family: Arial;
 }
@@ -32,7 +26,7 @@ img {
 
 body {
     /* 背景图片 */
-    background-image: url(http://images.cnblogs.com/cnblogs_com/h82258652/693238/o_wallpaper_summer2013_1920X1080.jpg);
+    background-image: url(http://images.cnblogs.com/cnblogs_com/h82258652/693238/o_blog_background.jpg);
     background-repeat: no-repeat; /* 禁止重复 */
     background-attachment: fixed; /* 不随滚动条滚动 */
     background-size: cover;
@@ -90,7 +84,7 @@ body {
 
         #topMnu li:last-child {
             /* 去除最后一个元素的右边框 */
-            border-right-width: 0px;
+            border-right-width: 0;
             border-right-style: none;
             border-right-color: none;
         }
@@ -128,10 +122,7 @@ body {
     border-right-color: darkgreen;
     border-radius: 0 0 10px 0;
     background: linear-gradient(to right,rgb(19,147,185),rgba(72,181,24,0.9)); /* 背景 */
-    padding-top: 5px;
-    padding-right: 5px;
-    padding-bottom: 3px;
-    padding-left: 5px;
+    padding: 5px 5px 3px 5px;
     box-shadow: 0 0 0 1px #5F5A4B, 1px 1px 6px 1px skyblue; /* 阴影 */
 }
 
@@ -164,13 +155,13 @@ body {
 
 .post {
     /* 圆角背景 */
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(255,255,255,0.25);
     border-radius: 15px;
 }
 
     .post > h2 {
         background-color: rgba(255,255,255,0.9); /* tab 标题背景 */
-        border-radius: 15px 15px 0px 0px; /* 左上、右上圆角 */
+        border-radius: 15px 15px 0 0; /* 左上、右上圆角 */
         padding-top: 10px;
         padding-bottom: 5px;
         padding-left: 10px;
@@ -228,12 +219,12 @@ body {
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    color: lightgray;
+    color: rgb(240,240,240);
 }
 
     /* 阅读全文 */
     .c_b_p_desc a {
-        text-indent: 0px;
+        text-indent: 0;
         display: table;
         color: white;
         background-image: url(http://images.cnblogs.com/cnblogs_com/h82258652/693238/o_icon_readmore.png);
@@ -251,10 +242,7 @@ body {
 /* 博文页 */
 #post .entry {
     background-color: white;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
 }
 
 #cnblogs_post_body {
@@ -357,7 +345,7 @@ body {
 /* 已有评论 */
 #blog-comments-placeholder {
     margin-top: 10px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(255,255,255,0.25);
     border-radius: 15px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -368,8 +356,8 @@ body {
 .addcomment {
     visibility: collapse;
     position: fixed;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
 }
 
 #commentList li {
@@ -379,15 +367,12 @@ body {
     border-bottom-style: solid;
     border-bottom-color: gray;
     /* 内边距 */
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+    padding: 10px;
 }
 
     /* 去除最后一个的下边框 */
     #commentList li:last-child {
-        border-bottom-width: 0px;
+        border-bottom-width: 0;
         border-bottom-style: none;
         border-bottom-color: none;
     }
@@ -489,8 +474,8 @@ body {
 /* 刷新评论按钮 */
 #lnk_RefreshComments {
     background-color: white;
-    border-radius: 0px 0px 2px 2px;
-    box-shadow: 0px 4px 5px 1px rgba(7,93,179,0.5);
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 4px 5px 1px rgba(7,93,179,0.5);
     color: rgb(7,93,179);
     padding-top: 5px;
     padding-bottom: 5px;
@@ -501,8 +486,8 @@ body {
 /* 刷新页面按钮 */
 #comment_nav a:nth-last-child(2) {
     background-color: white;
-    border-radius: 0px 0px 2px 2px;
-    box-shadow: 0px 4px 5px 1px rgba(7,93,179,0.5);
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 4px 5px 1px rgba(7,93,179,0.5);
     color: rgb(7,93,179);
     padding-top: 5px;
     padding-bottom: 5px;
@@ -513,8 +498,8 @@ body {
 /* 返回顶部 */
 #comment_nav a:last-child {
     background-color: white;
-    border-radius: 0px 0px 2px 2px;
-    box-shadow: 0px 4px 5px 1px rgba(7,93,179,0.5);
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 4px 5px 1px rgba(7,93,179,0.5);
     color: rgb(7,93,179);
     padding-top: 5px;
     padding-bottom: 5px;
@@ -526,10 +511,25 @@ body {
 #comment_form_container {
 }
 
+/* “发送评论”文本 */
+#commentform_title {
+    color: rgb(255,255,255);
+}
+
+/* 昵称 */
+#comment_form_container > p {
+    color: rgb(255,255,255);
+}
+
 /* 评论框工具栏 */
 .commentbox_title {
     width: 100%;
     cursor: default;
+}
+
+/* “评论内容”文本 */
+.commentbox_title_left {
+    color: rgb(255,255,255);
 }
 
 /* 评论框工具栏各个按钮 */
@@ -567,7 +567,7 @@ body {
 /* [使用Ctrl+Enter键快速提交] */
 #commentbox_opt + p {
     display: inline;
-    text-shadow: 0px 0px 15px gold;
+    text-shadow: 0 0 15px gold;
 }
 
 /* 底部导航栏 */
@@ -585,8 +585,8 @@ body {
 /* 最新 IT 新闻 */
 #under_post_news {
     position: fixed;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     visibility: collapse;
 }
 
@@ -599,8 +599,8 @@ body {
 /* 最新知识库文章 */
 #under_post_kb {
     position: fixed;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     visibility: collapse;
 }
 
@@ -614,10 +614,7 @@ body {
         color: deepskyblue;
         background-color: white;
         border: 1px solid #9aafe5;
-        padding-top: 4px;
-        padding-right: 10px;
-        padding-bottom: 4px;
-        padding-left: 10px;
+        padding: 4px 10px 4px 10px;
         -moz-transition: 0.5s;
         -o-transition: 0.5s;
         -webkit-transition: 0.5s;
@@ -625,11 +622,11 @@ body {
     }
 
         #pager a:first-child {
-            border-radius: 14px 0px 0px 14px;
+            border-radius: 14px 0 0 14px;
         }
 
         #pager a:last-child {
-            border-radius: 0px 14px 14px 0px;
+            border-radius: 0 14px 14px 0;
         }
 
         #pager a:only-child {
@@ -645,7 +642,7 @@ body {
         padding-right: 5px;
         color: black;
         font-weight: 500;
-        text-shadow: 0px 0px 5px deepskyblue;
+        text-shadow: 0 0 5px deepskyblue;
     }
 
 /* 侧边栏 */
@@ -660,7 +657,7 @@ body {
 /* 响应式 */
 @media screen and (max-width:900px) {
     #content {
-        margin-right: 0px;
+        margin-right: 0;
     }
 
     #sidebar {
@@ -668,7 +665,7 @@ body {
     }
 
     #div_digg {
-        right: 0px;
+        right: 0;
     }
 }
 
@@ -690,9 +687,9 @@ body {
 #profile_block {
     font-size: small;
     color: lightgray;
-    background-color: rgba(0,0,0,0.5);
-    border-radius: 0px 0px 5px 5px;
-    margin-top: 0px;
+    background-color: rgba(255,255,255,0.25);
+    border-radius: 0 0 5px 5px;
+    margin-top: 0;
     margin-bottom: 5px;
     padding: 5px;
 }
@@ -725,7 +722,7 @@ body {
 
 /* 日历 */
 #side-calendar {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(255,255,255,0.25);
     border-radius: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -735,7 +732,7 @@ body {
     #side-calendar h2 {
         background-color: rgba(255,255,255,0.9);
         text-align: center;
-        border-radius: 5px 5px 0px 0px;
+        border-radius: 5px 5px 0 0;
     }
 
 /* 日历本体 */
@@ -745,7 +742,7 @@ body {
 /* 上一月和下一月 */
 .CalNextPrev {
     background-color: rgba(225,225,225,0.85);
-    border-radius: 0px !important;
+    border-radius: 0 !important;
     width: 19px;
     height: 19px;
     text-align: center;
@@ -768,7 +765,7 @@ body {
 }
 
 #blogCalendar tr:last-child td:nth-child(1) {
-    border-radius: 0px 0px 0px 5px;
+    border-radius: 0 0 0 5px;
 }
 
 /* 星期一 */
@@ -801,20 +798,21 @@ body {
 }
 
 #blogCalendar tr:last-child td:nth-child(7) {
-    border-radius: 0px 0px 5px 0px;
+    border-radius: 0 0 5px 0;
 }
 
 #blogCalendar tr:not(:nth-child(1)) th {
     color: silver;
-    text-shadow: 0px 0px 5px gold;
+    text-shadow: 0 0 5px gold;
 }
 
 #blogCalendar tr:not(:nth-child(1)) td {
-    color: gray;
+    color: rgb(180,180,180);
 }
 
 #blogCalendar tr:not(:nth-child(1)) a {
     color: lightskyblue;
+    font-weight: bold;
 }
 
     #blogCalendar tr:not(:nth-child(1)) a:hover {
