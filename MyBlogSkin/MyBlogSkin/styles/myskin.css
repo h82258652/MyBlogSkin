@@ -483,6 +483,16 @@ body {
     margin-left: 2px;
 }
 
+/* 发送评论后的用户名称 */
+.comment_my_posted > a {
+    color: gold;
+}
+
+/* 发送评论后显示的评论内容框 */
+.comment_my_posted > blockquote {
+    background-color: white;
+}
+
 /* 刷新页面按钮 */
 #comment_nav a:nth-last-child(2) {
     background-color: white;
