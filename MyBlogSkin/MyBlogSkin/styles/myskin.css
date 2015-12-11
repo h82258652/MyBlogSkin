@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 
 /* 全局 */
 * {
@@ -26,7 +26,7 @@ img {
 
 body {
     /* 背景图片 */
-    background-image: url(http://images.cnblogs.com/cnblogs_com/h82258652/693238/o_blog_background.jpg);
+    background-image: url(http://images.cnblogs.com/cnblogs_com/h82258652/693238/o_one-punch-man-high-quality-desktop-background.jpg);
     background-repeat: no-repeat; /* 禁止重复 */
     background-attachment: fixed; /* 不随滚动条滚动 */
     background-size: cover;
@@ -155,7 +155,7 @@ body {
 
 .post {
     /* 圆角背景 */
-    background-color: rgba(255,255,255,0.25);
+    background-color: rgba(0,0,0,0.5);
     border-radius: 15px;
 }
 
@@ -219,7 +219,7 @@ body {
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    color: rgb(240,240,240);
+    color: rgb(220,220,220);
 }
 
     /* 阅读全文 */
@@ -345,7 +345,7 @@ body {
 /* 已有评论 */
 #blog-comments-placeholder {
     margin-top: 10px;
-    background-color: rgba(255,255,255,0.25);
+    background-color: rgba(0,0,0,0.5);
     border-radius: 15px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -697,7 +697,7 @@ body {
 #profile_block {
     font-size: small;
     color: lightgray;
-    background-color: rgba(255,255,255,0.25);
+    background-color: rgba(0,0,0,0.5);
     border-radius: 0 0 5px 5px;
     margin-top: 0;
     margin-bottom: 5px;
@@ -732,7 +732,7 @@ body {
 
 /* 日历 */
 #side-calendar {
-    background-color: rgba(255,255,255,0.25);
+    background-color: rgba(0,0,0,0.5);
     border-radius: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
